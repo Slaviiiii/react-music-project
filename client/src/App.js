@@ -14,6 +14,7 @@ import { Login } from "./components/Login/Login";
 import { Register } from "./components/Register/Register";
 import { Details } from "./components/Details/Details";
 import { Edit } from "./components/Edit/Edit";
+import { Delete } from "./components/Delete/Delete";
 
 function App() {
   const navigate = useNavigate();
@@ -65,6 +66,7 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/details/:musicId" element={<Details />} />
             <Route path="/edit/:musicId" element={<Edit onMusicEditSubmit={onMusicEditSubmit} />} />
+            <Route path="/delete/:musicId" element={<Delete />} />
           </Routes>
         </main>
         <Footer />

@@ -52,6 +52,26 @@
   height: 250px;
 }
 
+#details-delete-wrapper {
+  color: rgb(7, 6, 6);
+  background-color: rgb(198, 201, 188);
+  margin: 50px auto;
+  min-height: 300px;
+  width: 40%;
+  border: 2px ridge rgb(210, 208, 208);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2), 0 3px 3px 0 rgba(0, 0, 0, 0.24);
+}
+
+#details-img {
+  margin-left: 250px;
+}
+
+button {
+  background-color: #a0e7b8;
+  border-color: #a0e7b8;
+  font-size: 17px;
+}
+
 h4 {
   text-align: center;
 }

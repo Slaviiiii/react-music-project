@@ -35,11 +35,11 @@ export const Edit = ({
                 <button id="back-btn" onClick={onBack} type="button">Back</button>
                 <h2>Edit Music</h2>
                 <form className="edit-form" method="POST" onSubmit={onSubmit}>
-                    <input value={values.name} onChange={onChangeHandler} type="text" name="name" id="name" />
-                    <input value={values.imgUrl} onChange={onChangeHandler} type="text" name="imgUrl" id="imageUrl" />
-                    <input value={values.genre} onChange={onChangeHandler} type="text" name="genre" id="genre" />
-                    <input value={values.artist} onChange={onChangeHandler} type="text" name="artist" id="artist" />
-                    <textarea value={values.description} onChange={onChangeHandler} id="description" name="description" rows="4" cols="50"></textarea>
+                    <input defaultValue={values.name} onChange={onChangeHandler} type="text" name="name" id="name" />
+                    <input defaultValue={values.imgUrl} onChange={onChangeHandler} type="text" name="imgUrl" id="imageUrl" />
+                    <input defaultValue={values.genre} onChange={onChangeHandler} type="text" name="genre" id="genre" />
+                    <input defaultValue={values.artist} onChange={onChangeHandler} type="text" name="artist" id="artist" />
+                    <textarea defaultValue={values.description} onChange={onChangeHandler} id="description" name="description" rows="4" cols="50"></textarea>
 
                     <button type="submit">send</button>
                 </form>
