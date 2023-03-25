@@ -67,18 +67,29 @@
 }
 
 button {
-  background-color: #a0e7b8;
-  border-color: #a0e7b8;
-  font-size: 17px;
+  text-decoration: none;
+  margin: auto 50px;
+  font-size: 21px;
+  width: 130px;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  background: #5c9596;
+  border: #5c9596;
 }
 
 h4 {
   text-align: center;
 }
 
-p {
+.details-artist {
   text-align: center;
   font-size: 19px;
+}
+
+.delete-message {
+  text-align: center;
+  font-size: 24px;
 }
 
 span {
@@ -100,4 +111,33 @@ span {
   text-align: center;
   color: white;
   background: #5c9596;
+}
+
+
+#delete-actions {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+#delete-actions button {
+  text-decoration: none;
+  margin: auto 50px;
+  font-size: 21px;
+  width: 130px;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  background: #5c9596;
+}
+
+#delete-actions a {
+  text-decoration: none;
+  margin: auto 50px;
+  font-size: 21px;
+  width: 130px;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  background: #e06868;
 }
