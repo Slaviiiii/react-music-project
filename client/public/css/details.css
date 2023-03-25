@@ -1,0 +1,83 @@
+#details-wrapper {
+  color: rgb(7, 6, 6);
+  background-color: rgb(198, 201, 188);
+  margin: 50px auto;
+  min-height: 300px;
+  width: 70%;
+  border: 2px ridge rgb(210, 208, 208);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2), 0 3px 3px 0 rgba(0, 0, 0, 0.24);
+}
+
+#details-wrapper img {
+  display: block;
+  margin: 30px auto;
+}
+
+#details-name {
+  text-align: center;
+  font-weight: bold;
+  font-size: 29px;
+}
+
+#details-artist {
+  text-align: center;
+  font-weight: bold;
+  font-size: 26px;
+}
+
+#details-genre {
+  text-align: center;
+  font-weight: bold;
+  font-size: 19px;
+}
+
+#info-wrapper {
+  display: flex;
+}
+
+#details-description {
+  font-size: 24px;
+  width: 45%;
+  margin: 30px auto;
+  height: auto;
+  text-align: center;
+}
+
+#details-description span {
+  font-size: 21px;
+}
+
+#details-img {
+  width: 250px;
+  height: 250px;
+}
+
+h4 {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+  font-size: 19px;
+}
+
+span {
+  font-size: 17px;
+}
+
+#actions {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+#actions a {
+  text-decoration: none;
+  margin: auto 50px;
+  font-size: 21px;
+  width: 130px;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  background: #5c9596;
+}
