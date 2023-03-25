@@ -16,3 +16,4 @@ A react + js single page application which has the following pages :
 3. Catalog page with music
 
 
+![image](https://user-images.githubusercontent.com/106228555/227710863-ab464a44-2406-4e06-b022-04eb1e9f063a.png)
