@@ -1,0 +1,61 @@
+#all-music {
+  margin-top: 50px;
+  display: block;
+}
+
+h2 {
+  color: black;
+  text-align: center;
+  font-size: 40px;
+}
+
+.music img {
+  margin-right: 50px;
+  height: 170px;
+  width: 170px;
+}
+
+.name,
+.artist {
+  color: black;
+  font-size: 21px;
+}
+
+.music p strong {
+  color: black;
+}
+
+.music {
+  display: flex;
+  justify-content: space-between;
+  max-width: 50%;
+  margin: 30px auto;
+  background-color: rgb(198, 201, 188);
+  border-radius: 5px;
+  border: 2px ridge rgb(0, 0, 0);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2), 0 3px 3px 0 rgba(0, 0, 0, 0.24);
+}
+
+.details-btn {
+  text-decoration: none;
+  margin: auto 50px;
+  font-size: 21px;
+  width: 130px;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  background: #5c9596;
+}
+
+.music p {
+  margin: auto;
+  font-size: 21px;
+  min-width: 25%;
+  max-width: 30%;
+  text-align: center;
+}
+
+.music span {
+  padding: 10px;
+  margin: auto;
+}
