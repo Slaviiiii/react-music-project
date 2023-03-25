@@ -1,5 +1,5 @@
 # react-music-project
-A react + js single page application.
+A react + js single page application which has the following pages :
 
 1. Home page 
 
