@@ -11,23 +11,6 @@ export const Create = ({
         description: '',
     }, onMusicCreateSubmit);
 
-    // const [values, setValues] = useState({
-    //     name: '',
-    //     imgUrl: '',
-    //     genre: '',
-    //     artist: '',
-    //     description: ''
-    // });
-
-    // const onChangeHandler = (e) => {
-    //     setValues(state => ({ ...state, [e.target.name]: e.target.value }))
-    // };
-
-    // const onSubmit = (e) => {
-    //     e.preventDefault();
-    //     onMusicCreateSubmit(values);
-    // }
-
     return (
         <section id="create">
             <div className="form">
