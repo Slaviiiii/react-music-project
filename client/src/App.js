@@ -18,7 +18,7 @@ import { Edit } from "./components/Edit/Edit";
 function App() {
   const navigate = useNavigate();
   const [music, setMusic] = useState([]);
-  const [auth, setAuth] = useState({});
+  // const [auth, setAuth] = useState({});
 
   useEffect(() => {
     musicService.getAll()
@@ -45,8 +45,8 @@ function App() {
   const onLoginSubmit = async (data) => {
     try {
       const user = await authService.login(data);
-
-      setAuth(user);
+      console.log(user);
+      // setAuth(user);
     } catch (err) {
       console.log('Login problem!');
     }
