@@ -26,3 +26,9 @@ export const edit = async (musicId, data) => {
 
     return result;
 };
+
+export const del = async (musicId) => {
+    const result = await request.del(`${baseUrl}/delete/${musicId}`);
+
+    return result;
+}
