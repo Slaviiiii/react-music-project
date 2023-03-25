@@ -43,6 +43,13 @@ function App() {
     setMusic(state => [...state, editedMusic]);
   };
 
+  const onDelete = async (musicId) => {
+    await musicService.deleteFunc(musicId);
+
+    setMusic(state => state.filter(x => x._id !== musicId));
+    navigate('/allMusic');
+  };
+
   const onLoginSubmit = async (data) => {
     try {
       const user = await authService.login(data);
@@ -66,7 +73,7 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/details/:musicId" element={<Details />} />
             <Route path="/edit/:musicId" element={<Edit onMusicEditSubmit={onMusicEditSubmit} />} />
-            <Route path="/delete/:musicId" element={<Delete />} />
+            <Route path="/delete/:musicId" element={<Delete onDelete={onDelete} />} />
           </Routes>
         </main>
         <Footer />
