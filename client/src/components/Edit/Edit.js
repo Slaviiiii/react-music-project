@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import * as musicService from "../../services/musicService";
 
@@ -32,7 +32,7 @@ export const Edit = ({
     return (
         <section id="edit">
             <div className="form">
-                <button id="back-btn" onClick={onBack} type="button">Back</button>
+                <Link to={`/details/${musicId}`}>Back</Link>
                 <h2>Edit Music</h2>
                 <form className="edit-form" method="POST" onSubmit={onSubmit}>
                     <input defaultValue={values.name} onChange={onChangeHandler} type="text" name="name" id="name" />
