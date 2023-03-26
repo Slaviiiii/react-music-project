@@ -19,7 +19,7 @@ import { Delete } from "./components/Delete/Delete";
 function App() {
   const navigate = useNavigate();
   const [music, setMusic] = useState([]);
-  // const [auth, setAuth] = useState({});
+  const [auth, setAuth] = useState({});
 
   useEffect(() => {
     musicService.getAll()
@@ -54,14 +54,21 @@ function App() {
     try {
       const user = await authService.login(data);
       console.log(user);
-      // setAuth(user);
+      setAuth(user);
     } catch (err) {
       console.log('Login problem!');
     }
   };
 
+  const context = {
+    onLoginSubmit,
+    userId: auth._id,
+    token: auth.accessToken,
+    userEmail: auth.email,
+  }
+
   return (
-    <AuthContext.Provider value={{ onLoginSubmit }}>
+    <AuthContext.Provider value={context}>
       <div id="wrapper">
         <Header />
         <main>
