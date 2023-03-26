@@ -53,7 +53,7 @@ function App() {
   const onLoginSubmit = async (data) => {
     try {
       const user = await authService.login(data);
-      console.log(user);
+
       setAuth(user);
     } catch (err) {
       console.log('Login problem!');
@@ -65,7 +65,10 @@ function App() {
     userId: auth._id,
     token: auth.accessToken,
     userEmail: auth.email,
-  }
+    isAuthenticated() {
+      return !!auth.accessToken
+    },
+  };
 
   return (
     <AuthContext.Provider value={context}>

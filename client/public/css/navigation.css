@@ -22,6 +22,11 @@ nav {
   justify-content: space-between;
 }
 
+#welcome {
+  color: black;
+  text-decoration: underline;
+}
+
 #logo {
   font-style: italic;
   font-size: 30px;
