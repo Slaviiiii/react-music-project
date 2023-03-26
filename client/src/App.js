@@ -62,8 +62,13 @@ function App() {
   };
 
   const onRegisterSubmit = async (data) => {
+    const { ['re-password']: repeatPassword, ...registerData } = data;
+    if (repeatPassword !== registerData.password) {
+      return;
+    }
+
     try {
-      const result = await authService.register(data);
+      const result = await authService.register(registerData);
 
       setAuth(result);
       navigate('/');
