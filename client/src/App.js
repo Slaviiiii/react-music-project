@@ -67,8 +67,8 @@ function App() {
     userEmail: auth.email,
     isAuthenticated() {
       return !!auth.accessToken
-    }
-  }
+    },
+  };
 
   return (
     <AuthContext.Provider value={context}>
