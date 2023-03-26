@@ -14,7 +14,7 @@ export const Header = () => {
             <nav>
 
                 <div>
-                    <span>{userEmail}</span>
+                    <span id="welcome">Welcome {userEmail}!</span>
                     <Link to="/allMusic">All Music</Link>
                 </div>
 
