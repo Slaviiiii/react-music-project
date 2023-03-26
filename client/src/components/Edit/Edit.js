@@ -25,10 +25,6 @@ export const Edit = ({
         onMusicEditSubmit(values);
     };
 
-    const onBack = (e) => {
-        navigate('/details/' + values._id);
-    };
-
     return (
         <section id="edit">
             <div className="form">
