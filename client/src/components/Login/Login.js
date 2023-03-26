@@ -1,5 +1,5 @@
 import { useContext } from "react";
-
+import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import { useForm } from "../../hooks/useForm";
 
@@ -35,7 +35,7 @@ export const Login = () => {
 
                     <button type="submit">Login</button>
                     <p className="message">
-                        Dont have an account? <a href="/register">Create one!</a>
+                        <span>Dont have an account? <Link to={"/register"}>Create one!</Link></span>
                     </p>
                 </form>
             </div>

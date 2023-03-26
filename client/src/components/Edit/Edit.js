@@ -1,11 +1,10 @@
-import { useParams, useNavigate, Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import * as musicService from "../../services/musicService";
 
 export const Edit = ({
     onMusicEditSubmit
 }) => {
-    const navigate = useNavigate();
     const { musicId } = useParams();
     const [values, setValues] = useState({});
 
@@ -23,10 +22,6 @@ export const Edit = ({
     const onSubmit = (e) => {
         e.preventDefault();
         onMusicEditSubmit(values);
-    };
-
-    const onBack = (e) => {
-        navigate('/details/' + values._id);
     };
 
     return (

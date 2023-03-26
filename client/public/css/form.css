@@ -95,12 +95,16 @@
 }
 
 .form .message {
-  margin: 15px 0 0;
-  color: #b3b3b3;
+  padding-top: 10px;
+  margin-bottom: 0px;
+  color: #000000;
   font-size: 17px;
 }
 
 .form .message a {
-  color: #5c9596;
+  margin-left: 20px;
+  color: white;
+  background-color: #5c9596;
   text-decoration: none;
+  text-align: center;
 }
