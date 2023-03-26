@@ -55,6 +55,7 @@ function App() {
       const user = await authService.login(data);
 
       setAuth(user);
+      navigate('/');
     } catch (err) {
       console.log('Login problem!');
     }
