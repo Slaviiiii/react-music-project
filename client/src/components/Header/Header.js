@@ -14,19 +14,19 @@ export const Header = () => {
             <nav>
 
                 <div>
-                    <span id="welcome">Welcome {userEmail}!</span>
                     <Link to="/allMusic">All Music</Link>
                 </div>
 
-                {isAuthenticated() && (
+                {isAuthenticated && (
                     <div className="user">
+                        <span id="welcome">Welcome {userEmail}!</span>
                         <Link to="/create">Create Music</Link>
                         <Link to="/logout">Logout</Link>
                     </div>
                 )}
 
 
-                {!isAuthenticated() && (
+                {!isAuthenticated && (
                     <div className="guest">
                         <Link to="/login">Login</Link>
                         <Link to="/register">Register</Link>
