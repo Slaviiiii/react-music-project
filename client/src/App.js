@@ -15,6 +15,7 @@ import { Register } from "./components/Register/Register";
 import { Details } from "./components/Details/Details";
 import { Edit } from "./components/Edit/Edit";
 import { Delete } from "./components/Delete/Delete";
+import { Logout } from "./components/Logout/Logout";
 
 function App() {
   const navigate = useNavigate();
@@ -62,7 +63,7 @@ function App() {
   };
 
   const onRegisterSubmit = async (data) => {
-    const { ['re-password']: repeatPassword, ...registerData } = data;
+    const { 're-password': repeatPassword, ...registerData } = data;
     if (repeatPassword !== registerData.password) {
       return;
     }
@@ -77,9 +78,17 @@ function App() {
     }
   };
 
+  const onLogout = async () => {
+    //Todo: logout
+    // await authService.logout();
+
+    setAuth({});
+  };
+
   const context = {
     onLoginSubmit,
     onRegisterSubmit,
+    onLogout,
     userId: auth._id,
     token: auth.accessToken,
     userEmail: auth.email,
@@ -95,6 +104,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/allMusic" element={<AllMusic music={music} />} />
             <Route path="/create" element={<Create onMusicCreateSubmit={onMusicCreateSubmit} />} />
+            <Route path="/logout" element={<Logout />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/details/:musicId" element={<Details />} />
