@@ -9,20 +9,21 @@ export const Register = () => {
     const { values, changeHandler, onSubmit } = useForm({
         email: '',
         password: '',
-        ['re-password']: '',
+        're-password': '',
     }, onRegisterSubmit);
 
     return (
         <section id="register">
             <div className="form">
                 <h2>Register</h2>
-                <form method="POST" className="login-form" onSubmit={onSubmit}>
+                <form className="login-form" method="POST" onSubmit={onSubmit}>
                     <input
                         type="text"
                         name="email"
                         id="register-email"
                         placeholder="email"
                         value={values.email}
+                        onChange={changeHandler}
                     />
 
                     <input
