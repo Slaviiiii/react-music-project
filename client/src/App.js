@@ -52,17 +52,29 @@ function App() {
 
   const onLoginSubmit = async (data) => {
     try {
-      const user = await authService.login(data);
+      const result = await authService.login(data);
 
-      setAuth(user);
+      setAuth(result);
       navigate('/');
     } catch (err) {
       console.log('Login problem!');
     }
   };
 
+  const onRegisterSubmit = async (data) => {
+    try {
+      const result = await authService.register(data);
+
+      setAuth(result);
+      navigate('/');
+    } catch (err) {
+      console.log('Register problem!');
+    }
+  };
+
   const context = {
     onLoginSubmit,
+    onRegisterSubmit,
     userId: auth._id,
     token: auth.accessToken,
     userEmail: auth.email,
