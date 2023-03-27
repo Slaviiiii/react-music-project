@@ -51,9 +51,9 @@ function App() {
     navigate('/allMusic');
   };
 
-  const onLoginSubmit = async (data, token) => {
+  const onLoginSubmit = async (data) => {
     try {
-      const result = await authService.login(data, token);
+      const result = await authService.login(data, auth.accessToken);
 
       setAuth(result);
       navigate('/');
@@ -62,14 +62,14 @@ function App() {
     }
   };
 
-  const onRegisterSubmit = async (data, token) => {
+  const onRegisterSubmit = async (data) => {
     const { 're-password': repeatPassword, ...registerData } = data;
     if (repeatPassword !== registerData.password) {
       return;
     }
 
     try {
-      const result = await authService.register(registerData, token);
+      const result = await authService.register(registerData, auth.accessToken);
 
       setAuth(result);
       navigate('/');
@@ -78,8 +78,8 @@ function App() {
     }
   };
 
-  const onLogout = async (token) => {
-    await authService.logout(token);
+  const onLogout = async () => {
+    await authService.logout(auth.accessToken);
 
     setAuth({});
   };
