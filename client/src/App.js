@@ -51,7 +51,7 @@ function App() {
     navigate('/allMusic');
   };
 
-  const onLoginSubmit = async (data) => {
+  const onLoginSubmit = async (data, token) => {
     try {
       const result = await authService.login(data, token);
 
@@ -62,7 +62,7 @@ function App() {
     }
   };
 
-  const onRegisterSubmit = async (data) => {
+  const onRegisterSubmit = async (data, token) => {
     const { 're-password': repeatPassword, ...registerData } = data;
     if (repeatPassword !== registerData.password) {
       return;
