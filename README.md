@@ -3,7 +3,10 @@
 A web application.
 
 ## Description
-For Routes it uses react-router-dom.
+This is a full stack web application, which users use to create an account, login with it and make their music ideas come true. Users can like other music if they are logged in. They can also read their own creations in order to edit and delete them.
+
+- For Routes it uses react-router-dom.
+- A React hook form is used for the validation. 
 
 ## Technologies
 The used Technologies are:
@@ -33,3 +36,10 @@ The used Technologies are:
 
 
 ![image](https://user-images.githubusercontent.com/106228555/227710863-ab464a44-2406-4e06-b022-04eb1e9f063a.png)
+
+## Get Started with
+
+- You have to fork and clone this repository.
+- Run npm install in the client folder.
+- Run npm start in the same folder.
+- Run node server.js in the server folder. 
