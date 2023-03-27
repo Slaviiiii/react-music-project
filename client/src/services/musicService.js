@@ -9,8 +9,8 @@ export const getAll = async () => {
     return music;
 };
 
-export const create = async (musicData) => {
-    const result = await request.post(baseUrl, musicData);
+export const create = async (musicData, token) => {
+    const result = await request.post(baseUrl, musicData, token);
 
     return result;
 };
