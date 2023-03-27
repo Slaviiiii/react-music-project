@@ -53,7 +53,7 @@ function App() {
 
   const onLoginSubmit = async (data) => {
     try {
-      const result = await authService.login(data);
+      const result = await authService.login(data, token);
 
       setAuth(result);
       navigate('/');
@@ -69,7 +69,7 @@ function App() {
     }
 
     try {
-      const result = await authService.register(registerData);
+      const result = await authService.register(registerData, token);
 
       setAuth(result);
       navigate('/');
@@ -78,9 +78,8 @@ function App() {
     }
   };
 
-  const onLogout = async () => {
-    //Todo: logout
-    // await authService.logout();
+  const onLogout = async (token) => {
+    await authService.logout(token);
 
     setAuth({});
   };

@@ -1,4 +1,4 @@
-export const request = async (method, url, data) => {
+export const request = async (method, url, data, token) => {
     const options = {};
 
     if (method !== 'GET') {
@@ -9,6 +9,13 @@ export const request = async (method, url, data) => {
                 'content-type': 'application/json',
             };
             options.body = JSON.stringify(data);
+        }
+    }
+
+    if (token) {
+        options.headers = {
+            ...options.headers,
+            'X-Authorization': token
         }
     }
 

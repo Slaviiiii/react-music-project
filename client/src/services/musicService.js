@@ -1,6 +1,6 @@
 import * as request from "./requester";
 
-const baseUrl = 'http://localhost:3030/jsonstore/allMusic';
+const baseUrl = 'http://localhost:3030/data/allMusic';
 
 export const getAll = async () => {
     const result = await request.get(baseUrl);
@@ -9,8 +9,8 @@ export const getAll = async () => {
     return music;
 };
 
-export const create = async (musicData) => {
-    const result = await request.post(baseUrl, musicData);
+export const create = async (musicData, token) => {
+    const result = await request.post(baseUrl, musicData, token);
 
     return result;
 };
