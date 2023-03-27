@@ -1,6 +1,6 @@
 
 # react-music-project
-A React Web Application.
+A web application.
 
 ## Description
 This is a full stack web application, which users use to create an account, login with it and make their music ideas come true. Users can like other music if they are logged in. They can also read their own creations in order to edit and delete them.
