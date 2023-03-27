@@ -44,4 +44,5 @@ The used Technologies are:
 - Run npm start in the same folder.
 - Run node server.js in the server folder. 
  
-    Disclaimer: This project is still in development.
+    ### Disclaimer 
+    This project is still in development.
