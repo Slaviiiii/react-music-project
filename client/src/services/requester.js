@@ -12,6 +12,13 @@ export const request = async (method, url, data, token) => {
         }
     }
 
+    if (token) {
+        options.headers = {
+            ...options.headers,
+            'X-Authorization': token
+        }
+    }
+
     const response = await fetch(url, options);
 
     if (response.status === 204) {
