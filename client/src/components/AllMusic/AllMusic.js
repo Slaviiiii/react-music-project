@@ -3,7 +3,6 @@ import { Music } from "./Music";
 export const AllMusic = ({
     music
 }) => {
-    console.log(music);
     return (
         <section id="all-music">
             <h2>All Music</h2>
