@@ -15,7 +15,7 @@ export const Edit = ({
             .then(result => {
                 setValues(result);
             });
-    }, [musicId, musicService]);
+    }, [musicService, musicId]);
 
     const onChangeHandler = (e) => {
         setValues(state => ({ ...state, [e.target.name]: e.target.value }))
