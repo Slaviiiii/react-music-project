@@ -15,8 +15,8 @@ const request = async (method, token, url, data) => {
     if (token) {
         options.headers = {
             ...options.headers,
-            'X-Authorization': token
-        }
+            'X-Authorization': token,
+        };
     }
 
     const response = await fetch(url, options);

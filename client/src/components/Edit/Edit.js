@@ -8,14 +8,14 @@ export const Edit = ({
 }) => {
     const { musicId } = useParams();
     const [values, setValues] = useState({});
-    const { musicService } = useService(musicServiceFactory);
+    const musicService = useService(musicServiceFactory);
 
     useEffect(() => {
         musicService.getOne(musicId)
             .then(result => {
                 setValues(result);
             });
-    }, [musicId, musicService]);
+    }, [musicService, musicId]);
 
     const onChangeHandler = (e) => {
         setValues(state => ({ ...state, [e.target.name]: e.target.value }))
