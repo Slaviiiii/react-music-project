@@ -6,14 +6,14 @@ import { useService } from "../../hooks/useService";
 export const Details = () => {
     const { musicId } = useParams();
     const [music, setMusic] = useState({});
-    const { musicService } = useService(musicServiceFactory);
+    const musicService = useService(musicServiceFactory);
 
     useEffect(() => {
         musicService.getOne(musicId)
             .then(result => {
                 setMusic(result);
             });
-    }, [musicId, musicService]);
+    }, [musicService, musicId]);
 
     return (
         <section id="details">
