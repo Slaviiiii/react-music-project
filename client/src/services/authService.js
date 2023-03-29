@@ -1,4 +1,4 @@
-import * as request from "./requester";
+import { request } from "./requester";
 
 const baseurl = 'http://localhost:3030/users';
 
