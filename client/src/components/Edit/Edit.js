@@ -1,19 +1,21 @@
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import * as musicService from "../../services/musicService";
+import { musicServiceFactory } from "../../services/musicService";
+import { useService } from "../../hooks/useService";
 
 export const Edit = ({
     onMusicEditSubmit
 }) => {
     const { musicId } = useParams();
     const [values, setValues] = useState({});
+    const { musicService } = useService(musicServiceFactory);
 
     useEffect(() => {
         musicService.getOne(musicId)
             .then(result => {
                 setValues(result);
             });
-    }, [musicId]);
+    }, [musicId, musicService]);
 
     const onChangeHandler = (e) => {
         setValues(state => ({ ...state, [e.target.name]: e.target.value }))

@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 
-import * as musicService from "./services/musicService";
+import { useService } from "./hooks/useService";
+import { musicServiceFactory } from "./services/musicService";
 import { AuthContext } from "./contexts/AuthContext";
-import * as authService from "./services/authService";
+import { authServiceFactory } from "./services/authService";
 
 import { Footer } from "./components/Footer/Footer";
 import { Header } from "./components/Header/Header";
@@ -21,13 +22,15 @@ function App() {
   const navigate = useNavigate();
   const [music, setMusic] = useState([]);
   const [auth, setAuth] = useState({});
+  const musicService = useService(musicServiceFactory);
+  const authService = useService(authServiceFactory);
 
   useEffect(() => {
     musicService.getAll()
       .then(result => {
         setMusic(result);
       })
-  }, []);
+  }, [musicService]);
 
   const onMusicCreateSubmit = async (data) => {
     const newMusic = await musicService.create(data);
