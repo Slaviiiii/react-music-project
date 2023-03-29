@@ -8,7 +8,7 @@ export const Delete = ({
 }) => {
     const { musicId } = useParams();
     const [music, setMusic] = useState({});
-    const { musicService } = useService(musicServiceFactory);
+    const musicService = useService(musicServiceFactory);
 
     useEffect(() => {
         musicService.getOne(musicId)

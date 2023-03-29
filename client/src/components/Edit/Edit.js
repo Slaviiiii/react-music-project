@@ -8,7 +8,7 @@ export const Edit = ({
 }) => {
     const { musicId } = useParams();
     const [values, setValues] = useState({});
-    const { musicService } = useService(musicServiceFactory);
+    const musicService = useService(musicServiceFactory);
 
     useEffect(() => {
         musicService.getOne(musicId)
