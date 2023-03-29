@@ -1,17 +1,19 @@
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import * as musicService from "../../services/musicService";
+import { musicServiceFactory } from "../../services/musicService";
+import { useService } from "../../hooks/useService";
 
 export const Details = () => {
     const { musicId } = useParams();
     const [music, setMusic] = useState({});
+    const { musicService } = useService(musicServiceFactory);
 
     useEffect(() => {
         musicService.getOne(musicId)
             .then(result => {
                 setMusic(result);
             });
-    }, [musicId]);
+    }, [musicId, musicService]);
 
     return (
         <section id="details">
