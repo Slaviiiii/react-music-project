@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 
-import { useService } from "./hooks/useService";
 import { musicServiceFactory } from "./services/musicService";
 import { AuthContext } from "./contexts/AuthContext";
 import { authServiceFactory } from "./services/authService";
@@ -22,8 +21,8 @@ function App() {
   const navigate = useNavigate();
   const [music, setMusic] = useState([]);
   const [auth, setAuth] = useState({});
-  const musicService = useService(musicServiceFactory);
-  const authService = useService(authServiceFactory);
+  const musicService = musicServiceFactory(auth.accessToken);
+  const authService = authServiceFactory(auth.accessToken);
 
   useEffect(() => {
     musicService.getAll()
