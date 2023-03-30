@@ -113,6 +113,17 @@ span {
   background: #5c9596;
 }
 
+#actions button {
+  text-decoration: none;
+  margin: auto 50px;
+  font-size: 21px;
+  width: 130px;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  border-color: none;
+  background: #5c9596;
+}
 
 #delete-actions {
   display: flex;
