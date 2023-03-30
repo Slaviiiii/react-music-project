@@ -10,6 +10,7 @@ export const AuthProvider = ({
 }) => {
     const [auth, setAuth] = useState({});
     const navigate = useNavigate();
+
     const authService = authServiceFactory(auth.accessToken);
 
     const onLoginSubmit = async (data) => {
@@ -45,7 +46,7 @@ export const AuthProvider = ({
         setAuth({});
     };
 
-    const context = {
+    const contextvalues = {
         onLoginSubmit,
         onRegisterSubmit,
         onLogout,
@@ -55,7 +56,9 @@ export const AuthProvider = ({
         isAuthenticated: !!auth.accessToken,
     };
 
-    <AuthContext.Provider value={context}>
-        {children}
-    </AuthContext.Provider>
-}
+    return (
+        <AuthContext.Provider value={contextvalues}>
+            {children}
+        </AuthContext.Provider>
+    );
+};
