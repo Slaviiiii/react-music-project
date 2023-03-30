@@ -14,7 +14,6 @@ import { Login } from "./components/Login/Login";
 import { Register } from "./components/Register/Register";
 import { Details } from "./components/Details/Details";
 import { Edit } from "./components/Edit/Edit";
-import { Delete } from "./components/Delete/Delete";
 import { Logout } from "./components/Logout/Logout";
 
 function App() {
@@ -29,7 +28,7 @@ function App() {
       .then(result => {
         setMusic(result);
       })
-  }, [musicService]);
+  }, []);
 
   const onMusicCreateSubmit = async (data) => {
     const newMusic = await musicService.create(data);
@@ -44,13 +43,6 @@ function App() {
     navigate(`/details/${data._id}`);
     setMusic(state => state.filter(x => x._id !== editedMusic._id));
     setMusic(state => [...state, editedMusic]);
-  };
-
-  const onDelete = async (musicId) => {
-    await musicService.deleteFunc(musicId);
-
-    setMusic(state => state.filter(x => x._id !== musicId));
-    navigate('/allMusic');
   };
 
   const onLoginSubmit = async (data) => {
@@ -94,6 +86,7 @@ function App() {
     token: auth.accessToken,
     userEmail: auth.email,
     isAuthenticated: !!auth.accessToken,
+    setMusic
   };
 
   return (
@@ -110,7 +103,6 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/details/:musicId" element={<Details />} />
             <Route path="/edit/:musicId" element={<Edit onMusicEditSubmit={onMusicEditSubmit} />} />
-            <Route path="/delete/:musicId" element={<Delete onDelete={onDelete} />} />
           </Routes>
         </main>
         <Footer />
