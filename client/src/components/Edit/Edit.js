@@ -15,7 +15,7 @@ export const Edit = ({
             .then(result => {
                 setValues(result);
             });
-    }, [musicId]);
+    }, [musicId, musicService]);
 
     const onChangeHandler = (e) => {
 

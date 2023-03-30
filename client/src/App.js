@@ -26,7 +26,7 @@ function App() {
       .then(result => {
         setMusic(result);
       })
-  }, []);
+  }, [musicService]);
 
   const onMusicCreateSubmit = async (data) => {
     const newMusic = await musicService.create(data);

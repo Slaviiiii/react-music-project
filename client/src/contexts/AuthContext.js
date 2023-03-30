@@ -1,7 +1,7 @@
 import { createContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { authServiceFactory } from "./services/authService";
+import { authServiceFactory } from "../services/authService";
 
 export const AuthContext = createContext();
 
@@ -14,7 +14,7 @@ export const AuthProvider = ({
 
     const onLoginSubmit = async (data) => {
         try {
-            const result = await authService.login(data, auth.accessToken);
+            const result = await authService.login(data);
 
             setAuth(result);
             navigate('/');
@@ -30,7 +30,7 @@ export const AuthProvider = ({
         }
 
         try {
-            const result = await authService.register(registerData, auth.accessToken);
+            const result = await authService.register(registerData);
 
             setAuth(result);
             navigate('/');
@@ -40,7 +40,7 @@ export const AuthProvider = ({
     };
 
     const onLogout = async () => {
-        await authService.logout(auth.accessToken);
+        await authService.logout();
 
         setAuth({});
     };
