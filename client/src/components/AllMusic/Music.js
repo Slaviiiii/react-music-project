@@ -3,9 +3,7 @@ import { Link } from "react-router-dom";
 export const Music = ({
     name,
     imgUrl,
-    genre,
     artist,
-    description,
     _id
 }) => {
     return (

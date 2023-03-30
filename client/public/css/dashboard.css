@@ -30,7 +30,7 @@ h2 {
   justify-content: space-between;
   max-width: 50%;
   margin: 30px auto;
-  background-color: rgb(198, 201, 188);
+  background-color: #aadfd7;
   border-radius: 5px;
   border: 2px ridge rgb(0, 0, 0);
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2), 0 3px 3px 0 rgba(0, 0, 0, 0.24);

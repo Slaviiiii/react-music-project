@@ -10,7 +10,7 @@ export const Details = () => {
     const { musicId } = useParams();
     const [detailsMusic, setDetailsMusic] = useState({});
     const musicService = useService(musicServiceFactory);
-    const isOwner = userId == detailsMusic._ownerId;
+    const isOwner = userId === detailsMusic._ownerId;
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -23,7 +23,7 @@ export const Details = () => {
     const onDelete = async (musicId) => {
         const result = window.confirm("Are you sure you want to delete this music?");
 
-        if (result == true) {
+        if (result === true) {
             await musicService.deleteFunc(musicId);
 
             setMusic(state => state.filter(x => x._id !== musicId));
@@ -58,7 +58,7 @@ export const Details = () => {
                 {isOwner && (
                     <div id="actions">
                         <Link to={`/edit/${musicId}`} id="edit-btn">Edit</Link>
-                        <button onClick={() => onDelete(musicId)} type="button">Delete</button>
+                        <Link onClick={() => onDelete(musicId)}>Delete</Link>
                     </div>
                 )}
             </div>

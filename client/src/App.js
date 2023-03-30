@@ -2,8 +2,7 @@ import { useState, useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 
 import { musicServiceFactory } from "./services/musicService";
-import { AuthContext } from "./contexts/AuthContext";
-import { authServiceFactory } from "./services/authService";
+import { AuthProvider } from "./contexts/AuthContext";
 
 import { Footer } from "./components/Footer/Footer";
 import { Header } from "./components/Header/Header";
@@ -19,16 +18,15 @@ import { Logout } from "./components/Logout/Logout";
 function App() {
   const navigate = useNavigate();
   const [music, setMusic] = useState([]);
-  const [auth, setAuth] = useState({});
-  const musicService = musicServiceFactory(auth.accessToken);
-  const authService = authServiceFactory(auth.accessToken);
+
+  const musicService = musicServiceFactory();//auth.accessToken//
 
   useEffect(() => {
     musicService.getAll()
       .then(result => {
         setMusic(result);
       })
-  }, []);
+  }, [musicService]);
 
   const onMusicCreateSubmit = async (data) => {
     const newMusic = await musicService.create(data);
@@ -45,52 +43,8 @@ function App() {
     setMusic(state => [...state, editedMusic]);
   };
 
-  const onLoginSubmit = async (data) => {
-    try {
-      const result = await authService.login(data, auth.accessToken);
-
-      setAuth(result);
-      navigate('/');
-    } catch (err) {
-      console.log('Login problem!');
-    }
-  };
-
-  const onRegisterSubmit = async (data) => {
-    const { 're-password': repeatPassword, ...registerData } = data;
-    if (repeatPassword !== registerData.password) {
-      return;
-    }
-
-    try {
-      const result = await authService.register(registerData, auth.accessToken);
-
-      setAuth(result);
-      navigate('/');
-    } catch (err) {
-      console.log('Register problem!');
-    }
-  };
-
-  const onLogout = async () => {
-    await authService.logout(auth.accessToken);
-
-    setAuth({});
-  };
-
-  const context = {
-    onLoginSubmit,
-    onRegisterSubmit,
-    onLogout,
-    userId: auth._id,
-    token: auth.accessToken,
-    userEmail: auth.email,
-    isAuthenticated: !!auth.accessToken,
-    setMusic
-  };
-
   return (
-    <AuthContext.Provider value={context}>
+    <AuthProvider>
       <div id="wrapper">
         <Header />
         <main>
@@ -107,7 +61,7 @@ function App() {
         </main>
         <Footer />
       </div>
-    </AuthContext.Provider>
+    </AuthProvider>
   );
 }
 

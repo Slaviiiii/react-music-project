@@ -1,6 +1,6 @@
 #details-wrapper {
   color: rgb(7, 6, 6);
-  background-color: rgb(198, 201, 188);
+  background-color: #aadfd7;
   margin: 50px auto;
   min-height: 300px;
   width: 70%;
@@ -113,6 +113,17 @@ span {
   background: #5c9596;
 }
 
+#actions button {
+  text-decoration: none;
+  margin: auto 50px;
+  font-size: 21px;
+  width: 130px;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  border-color: none;
+  background: #5c9596;
+}
 
 #delete-actions {
   display: flex;
