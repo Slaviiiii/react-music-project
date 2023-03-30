@@ -58,7 +58,7 @@ export const Details = () => {
                 {isOwner && (
                     <div id="actions">
                         <Link to={`/edit/${musicId}`} id="edit-btn">Edit</Link>
-                        <button onClick={() => onDelete(musicId)} type="button">Delete</button>
+                        <Link onClick={() => onDelete(musicId)}>Delete</Link>
                     </div>
                 )}
             </div>
