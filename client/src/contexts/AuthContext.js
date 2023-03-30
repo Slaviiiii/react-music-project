@@ -8,8 +8,8 @@ export const AuthContext = createContext();
 export const AuthProvider = ({
     children,
 }) => {
-    const navigate = useNavigate();
     const [auth, setAuth] = useState({});
+    const navigate = useNavigate();
     const authService = authServiceFactory(auth.accessToken);
 
     const onLoginSubmit = async (data) => {

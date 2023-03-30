@@ -18,7 +18,7 @@ export const Details = () => {
             .then(result => {
                 setDetailsMusic(result);
             });
-    }, [musicId, musicService]);
+    }, [musicService, musicId]);
 
     const onDelete = async (musicId) => {
         const result = window.confirm("Are you sure you want to delete this music?");
