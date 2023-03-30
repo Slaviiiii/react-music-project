@@ -15,9 +15,10 @@ export const Edit = ({
             .then(result => {
                 setValues(result);
             });
-    }, [musicService, musicId]);
+    }, [musicId]);
 
     const onChangeHandler = (e) => {
+
         setValues(state => ({ ...state, [e.target.name]: e.target.value }))
     };
 
@@ -31,7 +32,7 @@ export const Edit = ({
             <div className="form">
                 <Link to={`/details/${musicId}`}>Back</Link>
                 <h2>Edit Music</h2>
-                <form className="edit-form" method="POST" onSubmit={onSubmit}>
+                <form className="edit-form" method="PUT" onSubmit={onSubmit}>
                     <input defaultValue={values.name} onChange={onChangeHandler} type="text" name="name" id="name" />
                     <input defaultValue={values.imgUrl} onChange={onChangeHandler} type="text" name="imgUrl" id="imageUrl" />
                     <input defaultValue={values.genre} onChange={onChangeHandler} type="text" name="genre" id="genre" />
