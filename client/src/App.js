@@ -20,12 +20,8 @@ import { RouteGuard } from "./components/common/RouteGuard";
 function App() {
     const navigate = useNavigate();
     const [music, setMusic] = useState([]);
-    const [auth, setAuth] = useLocalStorage("auth", {});
 
-    let musicService = musicServiceFactory(null);
-    if (auth) {
-        musicService = musicServiceFactory(auth.accessToken);
-    }
+    const musicService = musicServiceFactory();
 
     useEffect(() => {
         musicService.getAll()
@@ -70,6 +66,7 @@ function App() {
                         <Route path="/register" element={<Register />} />
                         <Route path="/login" element={<Login />} />
                         <Route path="/allMusic" element={<AllMusic music={music} />} />
+                        <Route path="/details/:musicId" element={<Details onDelete={onDelete} />} />
 
                         <Route element={<RouteGuard />}>
                             <Route path="/logout" element={<Logout />} />
@@ -81,10 +78,6 @@ function App() {
 
                         <Route element={<RouteGuard />}>
                             <Route path="/edit/:musicId" element={<Edit onMusicEditSubmit={onMusicEditSubmit} />} />
-                        </Route>
-
-                        <Route element={<RouteGuard />}>
-                            <Route path="/details/:musicId" element={<Details onDelete={onDelete} />} />
                         </Route>
                     </Routes>
                 </main>
