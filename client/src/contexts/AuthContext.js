@@ -12,7 +12,10 @@ export const AuthProvider = ({
     const [auth, setAuth] = useLocalStorage("auth", {});
     const navigate = useNavigate();
 
-    const authService = authServiceFactory(auth.accessToken);
+    let authService = authServiceFactory();
+    if (auth) {
+        authService = authServiceFactory(auth.accessToken);
+    }
 
     const onLoginSubmit = async (data) => {
         try {

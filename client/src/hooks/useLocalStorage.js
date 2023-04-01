@@ -3,7 +3,9 @@ import { useState } from "react";
 export const useLocalStorage = (key, initialValue) => {
     const [state, setState] = useState(() => {
         const localStorageState = localStorage.getItem(key);
-        if (localStorageState) {
+        console.log("this is localStorageState:");
+        console.log(localStorageState);
+        if (localStorageState && localStorageState != undefined) {
             const parsedState = JSON.parse(localStorageState);
 
             return parsedState;
