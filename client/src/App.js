@@ -69,15 +69,23 @@ function App() {
                         <Route path="/" element={<Home />} />
                         <Route path="/register" element={<Register />} />
                         <Route path="/login" element={<Login />} />
-                        <Route path="/logout" element={<Logout />} />
                         <Route path="/allMusic" element={<AllMusic music={music} />} />
-                        <Route path="/create" element={
-                            <RouteGuard>
-                                <Create onMusicCreateSubmit={onMusicCreateSubmit} />
-                            </RouteGuard>
-                        } />
-                        <Route path="/details/:musicId" element={<Details onDelete={onDelete} />} />
-                        <Route path="/edit/:musicId" element={<Edit onMusicEditSubmit={onMusicEditSubmit} />} />
+
+                        <Route element={<RouteGuard />}>
+                            <Route path="/logout" element={<Logout />} />
+                        </Route>
+
+                        <Route element={<RouteGuard />}>
+                            <Route path="/create" element={<Create onMusicCreateSubmit={onMusicCreateSubmit} />} />
+                        </Route>
+
+                        <Route element={<RouteGuard />}>
+                            <Route path="/edit/:musicId" element={<Edit onMusicEditSubmit={onMusicEditSubmit} />} />
+                        </Route>
+
+                        <Route element={<RouteGuard />}>
+                            <Route path="/details/:musicId" element={<Details onDelete={onDelete} />} />
+                        </Route>
                     </Routes>
                 </main>
                 <Footer />
