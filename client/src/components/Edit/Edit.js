@@ -15,11 +15,10 @@ export const Edit = ({
             .then(result => {
                 setValues(result);
             });
-    }, [musicService, musicId]);
+    }, [musicId]);
 
     const onChangeHandler = (e) => {
-
-        setValues(state => ({ ...state, [e.target.name]: e.target.value }))
+        setValues(state => ({ ...state, [e.target.name]: e.target.value }));
     };
 
     const onSubmit = (e) => {
