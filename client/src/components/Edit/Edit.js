@@ -1,14 +1,15 @@
 import { useParams, Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+
 import { musicServiceFactory } from "../../services/musicService";
 import { useService } from "../../hooks/useService";
+import { MusicContext } from "../../contexts/MusicContext";
 
-export const Edit = ({
-    onMusicEditSubmit
-}) => {
+export const Edit = () => {
     const { musicId } = useParams();
     const [values, setValues] = useState({});
     const musicService = useService(musicServiceFactory);
+    const { onMusicEditSubmit } = useContext(MusicContext);
 
     useEffect(() => {
         musicService.getOne(musicId)
