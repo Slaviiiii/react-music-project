@@ -3,6 +3,7 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 
 import { musicServiceFactory } from "./services/musicService";
 import { AuthProvider } from "./contexts/AuthContext";
+import { useLocalStorage } from "./hooks/useLocalStorage";
 
 import { Footer } from "./components/Footer/Footer";
 import { Header } from "./components/Header/Header";
