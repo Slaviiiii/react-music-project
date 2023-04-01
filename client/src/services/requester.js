@@ -20,7 +20,7 @@ const request = async (method, token, url, data) => {
     }
 
     try {
-        let res = await fetch(url, options);
+        const res = await fetch(url, options);
         if (!res.ok) {
             if (res.status === 403) {
                 localStorage.removeItem("auth");
@@ -41,7 +41,7 @@ const request = async (method, token, url, data) => {
 
         return result;
     } catch (error) {
-        console.log(error.status);
+        console.log(error.message);
     }
 }
 
