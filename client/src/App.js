@@ -14,11 +14,12 @@ import { Register } from "./components/Register/Register";
 import { Details } from "./components/Details/Details";
 import { Edit } from "./components/Edit/Edit";
 import { Logout } from "./components/Logout/Logout";
+import { useLocalStorage } from "./hooks/useLocalStorage";
 
 function App() {
   const navigate = useNavigate();
   const [music, setMusic] = useState([]);
-  const auth = JSON.parse(localStorage.getItem("auth"));
+  const [auth, setAuth] = useLocalStorage("auth", {});
   const musicService = musicServiceFactory(auth.accessToken);
 
   useEffect(() => {
@@ -27,6 +28,17 @@ function App() {
         setMusic(result);
       })
   }, []);
+
+  const onDelete = async (musicId) => {
+    const result = window.confirm("Are you sure you want to delete this music?");
+
+    if (result === true) {
+      await musicService.deleteFunc(musicId);
+
+      setMusic(state => state.filter(x => x._id !== musicId));
+      navigate('/allMusic');
+    }
+  };
 
   const onMusicCreateSubmit = async (data) => {
     const newMusic = await musicService.create(data);
@@ -55,7 +67,7 @@ function App() {
             <Route path="/logout" element={<Logout />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/details/:musicId" element={<Details />} />
+            <Route path="/details/:musicId" element={<Details onDelete={onDelete} />} />
             <Route path="/edit/:musicId" element={<Edit onMusicEditSubmit={onMusicEditSubmit} />} />
           </Routes>
         </main>
