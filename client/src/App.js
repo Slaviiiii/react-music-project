@@ -14,12 +14,13 @@ import { Register } from "./components/Register/Register";
 import { Details } from "./components/Details/Details";
 import { Edit } from "./components/Edit/Edit";
 import { Logout } from "./components/Logout/Logout";
+import { useLocalStorage } from "./hooks/useLocalStorage";
 
 function App() {
   const navigate = useNavigate();
   const [music, setMusic] = useState([]);
-
-  const musicService = musicServiceFactory();//auth.accessToken//
+  const [auth, setAuth] = useLocalStorage("auth", {});
+  const musicService = musicServiceFactory(auth.accessToken);
 
   useEffect(() => {
     musicService.getAll()
