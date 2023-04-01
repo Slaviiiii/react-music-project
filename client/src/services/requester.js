@@ -19,20 +19,31 @@ const request = async (method, token, url, data) => {
         };
     }
 
-    const response = await fetch(url, options);
+    try {
+        let res = await fetch(url, options);
+        if (!res.ok) {
+            if (res.status === 403) {
+                localStorage.removeItem("auth");
+            }
+            const err = await res.json();
+            throw new Error(err.message);
+        }
 
-    if (response.status === 204) {
-        return {};
+        if (res.status === 204) {
+            return {};
+        }
+
+        const result = await res.json();
+
+        if (!res.ok) {
+            throw result;
+        }
+
+        return result;
+    } catch (error) {
+        console.log(error.status);
     }
-
-    const result = await response.json();
-
-    if (!response.ok) {
-        throw result;
-    }
-
-    return result;
-};
+}
 
 export const requestFactory = (token) => {
     if (!token) {

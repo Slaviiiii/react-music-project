@@ -1,56 +1,51 @@
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useEffect, useState, useContext } from "react";
 
 import { musicServiceFactory } from "../../services/musicService";
 import { useService } from "../../hooks/useService";
 import { AuthContext } from "../../contexts/AuthContext";
 
-export const Details = () => {
-    const { userId, setMusic } = useContext(AuthContext);
+export const Details = ({
+    onDelete
+}) => {
+    const auth = JSON.parse(localStorage.getItem("auth"));
     const { musicId } = useParams();
-    const [detailsMusic, setDetailsMusic] = useState({});
+    const [music, setMusic] = useState({});
     const musicService = useService(musicServiceFactory);
-    const isOwner = userId === detailsMusic._ownerId;
-    const navigate = useNavigate();
 
     useEffect(() => {
         musicService.getOne(musicId)
             .then(result => {
-                setDetailsMusic(result);
+                setMusic(result);
             });
-    }, [musicService, musicId]);
+    }, [musicId]);
 
-    const onDelete = async (musicId) => {
-        const result = window.confirm("Are you sure you want to delete this music?");
-
-        if (result === true) {
-            await musicService.deleteFunc(musicId);
-
-            setMusic(state => state.filter(x => x._id !== musicId));
-            navigate('/allMusic');
-        }
-    };
+    const isOwner = auth._id === music._ownerId;
+    console.log("userId:");
+    console.log(auth._id);
+    console.log("ownerId:");
+    console.log(music._ownerId);
 
     return (
         <section id="details">
             <div id="details-wrapper">
-                <img id="details-img" src={detailsMusic.imgUrl} alt={`${detailsMusic.artist}--${detailsMusic.name}`} />
+                <img id="details-img" src={music.imgUrl} alt={`${music.artist}--${music.name}`} />
 
                 <p id="details-name">
-                    Name: <span id="name">{detailsMusic.name}</span>
+                    Name: <span id="name">{music.name}</span>
                 </p>
 
                 <p id="details-artist">
-                    Artist: <span id="artist">{detailsMusic.artist}</span>
+                    Artist: <span id="artist">{music.artist}</span>
                 </p>
 
                 <p id="details-genre">
-                    Genre: <span id="genre">{detailsMusic.genre}</span>
+                    Genre: <span id="genre">{music.genre}</span>
                 </p>
                 <div id="info-wrapper">
                     <div id="details-description">
                         <h4>Description:</h4>
-                        <span>{detailsMusic.description}</span>
+                        <span>{music.description}</span>
                     </div>
                 </div>
 
