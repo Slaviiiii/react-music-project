@@ -20,7 +20,7 @@ const request = async (method, token, url, data) => {
     }
 
     try {
-        let res = await fetch(url, options);
+        const res = await fetch(url, options);
         if (!res.ok) {
             if (res.status === 403) {
                 localStorage.removeItem("auth");
@@ -41,7 +41,7 @@ const request = async (method, token, url, data) => {
 
         return result;
     } catch (error) {
-        console.log(error.status);
+        console.log(error.message);
     }
 }
 
@@ -49,8 +49,8 @@ export const requestFactory = (token) => {
     if (!token) {
         const serializedAuth = localStorage.getItem("auth");
 
-        if (serializedAuth) {
-            const auth = JSON.stringify(serializedAuth);
+        if (serializedAuth && serializedAuth !== {}) {
+            const auth = JSON.parse(serializedAuth);
             token = auth.accessToken;
         }
     }

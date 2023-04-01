@@ -9,10 +9,9 @@ export const AuthContext = createContext();
 export const AuthProvider = ({
     children,
 }) => {
-    const [auth, setAuth] = useLocalStorage("auth", {});
     const navigate = useNavigate();
-
-    const authService = authServiceFactory(auth.accessToken);
+    const [auth, setAuth] = useLocalStorage("auth", {});
+    const authService = authServiceFactory();
 
     const onLoginSubmit = async (data) => {
         try {

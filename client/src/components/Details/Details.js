@@ -3,15 +3,14 @@ import { useEffect, useState, useContext } from "react";
 
 import { musicServiceFactory } from "../../services/musicService";
 import { useService } from "../../hooks/useService";
-import { AuthContext } from "../../contexts/AuthContext";
+import { MusicContext } from "../../contexts/MusicContext";
 
-export const Details = ({
-    onDelete
-}) => {
+export const Details = () => {
     const auth = JSON.parse(localStorage.getItem("auth"));
     const { musicId } = useParams();
     const [music, setMusic] = useState({});
     const musicService = useService(musicServiceFactory);
+    const { onDelete } = useContext(MusicContext);
 
     useEffect(() => {
         musicService.getOne(musicId)
@@ -21,10 +20,6 @@ export const Details = ({
     }, [musicId]);
 
     const isOwner = auth._id === music._ownerId;
-    console.log("userId:");
-    console.log(auth._id);
-    console.log("ownerId:");
-    console.log(music._ownerId);
 
     return (
         <section id="details">

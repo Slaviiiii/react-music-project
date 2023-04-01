@@ -1,8 +1,10 @@
+import { useContext } from "react";
 import { Music } from "./Music";
+import { MusicContext } from "../../contexts/MusicContext";
 
-export const AllMusic = ({
-    music
-}) => {
+export const AllMusic = () => {
+    const { music } = useContext(MusicContext);
+
     return (
         <section id="all-music">
             <h2>All Music</h2>

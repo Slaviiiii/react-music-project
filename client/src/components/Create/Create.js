@@ -1,8 +1,9 @@
+import { useContext } from "react";
 import { useForm } from "../../hooks/useForm";
+import { MusicContext } from "../../contexts/MusicContext";
 
-export const Create = ({
-    onMusicCreateSubmit
-}) => {
+export const Create = () => {
+    const { onMusicCreateSubmit } = useContext(MusicContext);
     const { values, changeHandler, onSubmit } = useForm({
         name: '',
         imgUrl: '',

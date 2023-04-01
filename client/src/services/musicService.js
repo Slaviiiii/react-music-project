@@ -7,6 +7,9 @@ export const musicServiceFactory = (token) => {
 
     const getAll = async () => {
         const result = await request.get(baseUrl);
+        if (!result) {
+            return [];
+        }
         const music = Object.values(result);
 
         return music;
@@ -40,5 +43,5 @@ export const musicServiceFactory = (token) => {
         getOne,
         edit,
         deleteFunc
-    }
+    };
 };

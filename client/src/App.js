@@ -1,8 +1,6 @@
-import { useState, useEffect } from "react";
-import { Routes, Route, useNavigate } from "react-router-dom";
-
-import { musicServiceFactory } from "./services/musicService";
+import { Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./contexts/AuthContext";
+import { MusicProvider } from "./contexts/MusicContext";
 
 import { Footer } from "./components/Footer/Footer";
 import { Header } from "./components/Header/Header";
@@ -14,67 +12,40 @@ import { Register } from "./components/Register/Register";
 import { Details } from "./components/Details/Details";
 import { Edit } from "./components/Edit/Edit";
 import { Logout } from "./components/Logout/Logout";
-import { useLocalStorage } from "./hooks/useLocalStorage";
+import { RouteGuard } from "./components/common/RouteGuard";
 
 function App() {
-  const navigate = useNavigate();
-  const [music, setMusic] = useState([]);
-  const [auth, setAuth] = useLocalStorage("auth", {});
-  const musicService = musicServiceFactory(auth.accessToken);
+    return (
+        <AuthProvider>
+            <MusicProvider>
+                <div id="wrapper">
+                    <Header />
+                    <main>
+                        <Routes>
+                            <Route path="/" element={<Home />} />
+                            <Route path="/register" element={<Register />} />
+                            <Route path="/login" element={<Login />} />
+                            <Route path="/allMusic" element={<AllMusic />} />
+                            <Route path="/details/:musicId" element={<Details />} />
 
-  useEffect(() => {
-    musicService.getAll()
-      .then(result => {
-        setMusic(result);
-      })
-  }, []);
+                            <Route element={<RouteGuard />}>
+                                <Route path="/logout" element={<Logout />} />
+                            </Route>
 
-  const onDelete = async (musicId) => {
-    const result = window.confirm("Are you sure you want to delete this music?");
+                            <Route element={<RouteGuard />}>
+                                <Route path="/create" element={<Create />} />
+                            </Route>
 
-    if (result === true) {
-      await musicService.deleteFunc(musicId);
-
-      setMusic(state => state.filter(x => x._id !== musicId));
-      navigate('/allMusic');
-    }
-  };
-
-  const onMusicCreateSubmit = async (data) => {
-    const newMusic = await musicService.create(data);
-
-    navigate('/allMusic');
-    setMusic(state => [...state, newMusic]);
-  };
-
-  const onMusicEditSubmit = async (data) => {
-    const editedMusic = await musicService.edit(data._id, data);
-
-    navigate(`/details/${data._id}`);
-    setMusic(state => state.filter(x => x._id !== editedMusic._id));
-    setMusic(state => [...state, editedMusic]);
-  };
-
-  return (
-    <AuthProvider>
-      <div id="wrapper">
-        <Header />
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/allMusic" element={<AllMusic music={music} />} />
-            <Route path="/create" element={<Create onMusicCreateSubmit={onMusicCreateSubmit} />} />
-            <Route path="/logout" element={<Logout />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/details/:musicId" element={<Details onDelete={onDelete} />} />
-            <Route path="/edit/:musicId" element={<Edit onMusicEditSubmit={onMusicEditSubmit} />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </AuthProvider>
-  );
+                            <Route element={<RouteGuard />}>
+                                <Route path="/edit/:musicId" element={<Edit />} />
+                            </Route>
+                        </Routes>
+                    </main>
+                    <Footer />
+                </div>
+            </MusicProvider>
+        </AuthProvider>
+    );
 }
 
 export default App;
