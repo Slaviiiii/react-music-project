@@ -8,7 +8,7 @@ import { AuthContext } from "../../contexts/AuthContext";
 export const Details = ({
     onDelete
 }) => {
-    const auth = localStorage.getItem("auth");
+    const auth = JSON.parse(localStorage.getItem("auth"));
     const { musicId } = useParams();
     const [music, setMusic] = useState({});
     const musicService = useService(musicServiceFactory);
@@ -22,7 +22,7 @@ export const Details = ({
 
     const isOwner = auth._id === music._ownerId;
     console.log("userId:");
-    console.log(userId);
+    console.log(auth._id);
     console.log("ownerId:");
     console.log(music._ownerId);
 
