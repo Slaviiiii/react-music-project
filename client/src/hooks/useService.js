@@ -1,10 +1,8 @@
-import { useContext } from "react";
-import { AuthContext } from "../contexts/AuthContext";
 
 export const useService = (serviceFactory) => {
-    const { token } = useContext(AuthContext)
+    const auth = JSON.parse(localStorage.getItem("auth"));
 
-    const service = serviceFactory(token);
+    const service = serviceFactory(auth.accessToken);
 
     return service;
 };

@@ -47,7 +47,7 @@ export const AuthProvider = ({
         setAuth({});
     };
 
-    const contextvalues = {
+    const contextValues = {
         onLoginSubmit,
         onRegisterSubmit,
         onLogout,
@@ -58,7 +58,7 @@ export const AuthProvider = ({
     };
 
     return (
-        <AuthContext.Provider value={contextvalues}>
+        <AuthContext.Provider value={contextValues}>
             {children}
         </AuthContext.Provider>
     );
