@@ -14,12 +14,11 @@ import { Register } from "./components/Register/Register";
 import { Details } from "./components/Details/Details";
 import { Edit } from "./components/Edit/Edit";
 import { Logout } from "./components/Logout/Logout";
-import { useLocalStorage } from "./hooks/useLocalStorage";
 
 function App() {
   const navigate = useNavigate();
   const [music, setMusic] = useState([]);
-  const [auth, setAuth] = useLocalStorage("auth", {});
+  const auth = JSON.parse(localStorage.getItem("auth"));
   const musicService = musicServiceFactory(auth.accessToken);
 
   useEffect(() => {
@@ -27,7 +26,7 @@ function App() {
       .then(result => {
         setMusic(result);
       })
-  }, [musicService]);
+  }, []);
 
   const onMusicCreateSubmit = async (data) => {
     const newMusic = await musicService.create(data);
