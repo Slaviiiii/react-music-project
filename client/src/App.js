@@ -19,7 +19,7 @@ import { useLocalStorage } from "./hooks/useLocalStorage";
 function App() {
   const navigate = useNavigate();
   const [music, setMusic] = useState([]);
-  const [auth, setAuth] = useLocalStorage("auth", {});
+  const auth = localStorage.getItem("auth");
   const musicService = musicServiceFactory(auth.accessToken);
 
   useEffect(() => {
