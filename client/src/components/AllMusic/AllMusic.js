@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Music } from "./Music";
+import Music from "./Music";
 import { MusicContext } from "../../contexts/MusicContext";
 
 export const AllMusic = () => {
