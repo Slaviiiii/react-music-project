@@ -9,11 +9,11 @@ h2 {
   font-size: 40px;
 }
 
-.music img {
+/* .music img {
   margin-right: 50px;
   height: 170px;
   width: 170px;
-}
+} */
 
 .name,
 .artist {
@@ -21,11 +21,11 @@ h2 {
   font-size: 21px;
 }
 
-.music p strong {
+/* .music p strong {
   color: black;
-}
+} */
 
-.music {
+/* .music {
   display: flex;
   justify-content: space-between;
   max-width: 50%;
@@ -34,7 +34,7 @@ h2 {
   border-radius: 5px;
   border: 2px ridge rgb(0, 0, 0);
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2), 0 3px 3px 0 rgba(0, 0, 0, 0.24);
-}
+} */
 
 .details-btn {
   text-decoration: none;
@@ -47,7 +47,7 @@ h2 {
   background: #5c9596;
 }
 
-.music p {
+/* .music p {
   margin: auto;
   font-size: 21px;
   min-width: 25%;
@@ -58,4 +58,4 @@ h2 {
 .music span {
   padding: 10px;
   margin: auto;
-}
+} */
