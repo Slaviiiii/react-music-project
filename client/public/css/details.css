@@ -3,7 +3,7 @@
   background-color: #aadfd7;
   margin: 50px auto;
   min-height: 300px;
-  width: 70%;
+  width: 47%;
   border: 2px ridge rgb(210, 208, 208);
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2), 0 3px 3px 0 rgba(0, 0, 0, 0.24);
 }
@@ -151,4 +151,13 @@ span {
   text-align: center;
   color: white;
   background: #e06868;
+}
+
+#details-wrapper button {
+  width: fit-content;
+  margin-left: 750px;
+  background: #5c9596;
+  color: white;
+  margin-top: 50px;
+  font-size: 20px;
 }
