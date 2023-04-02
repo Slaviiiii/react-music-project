@@ -2,8 +2,8 @@ import { requestFactory } from "./requester";
 
 const baseUrl = 'http://localhost:3030/data/allMusic';
 
-export const musicServiceFactory = (token) => {
-    const request = requestFactory(token);
+export const musicServiceFactory = () => {
+    const request = requestFactory();
 
     const getAll = async () => {
         const result = await request.get(baseUrl);

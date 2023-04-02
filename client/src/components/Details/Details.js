@@ -24,7 +24,12 @@ export const Details = () => {
     return (
         <section id="details">
             <div id="details-wrapper">
+                <div className="back-div">
+                    <Link to={`/allMusic`}>Back</Link>
+                </div>
+
                 <img id="details-img" src={music.imgUrl} alt={`${music.artist}--${music.name}`} />
+
 
                 <p id="details-name">
                     Name: <span id="name">{music.name}</span>
