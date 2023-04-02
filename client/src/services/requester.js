@@ -15,10 +15,12 @@ const request = async (method, url, data) => {
     const serializedAuth = localStorage.getItem("auth");
     if (serializedAuth) {
         const auth = JSON.parse(serializedAuth);
-        options.headers = {
-            ...options.headers,
-            'X-Authorization': auth.accessToken,
-        };
+        if (auth.accessToken) {
+            options.headers = {
+                ...options.headers,
+                'X-Authorization': auth.accessToken,
+            };
+        }
     }
 
     try {
