@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
+import { memo } from "react";
 
-export const Music = ({
+const Music = ({
     name,
     imgUrl,
     artist,
@@ -21,3 +22,5 @@ export const Music = ({
         </div>
     );
 };
+
+export default memo(Music);
