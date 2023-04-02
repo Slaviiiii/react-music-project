@@ -8,3 +8,19 @@
    text-align: center;
    font-size: 40px;
  }
+
+
+ .music img {
+   margin-right: 50px;
+   height: 170px;
+   width: 170px;
+ }
+
+ .details-btn {
+   text-decoration: none;
+   margin: auto 50px;
+   font-size: 21px;
+   width: 130px;
+   padding: 10px;
+   text-align: center;
+ }
