@@ -48,8 +48,8 @@
 }
 
 #details-img {
-  width: 250px;
-  height: 250px;
+  width: 230px;
+  height: 200px;
 }
 
 #details-delete-wrapper {
@@ -153,11 +153,21 @@ span {
   background: #e06868;
 }
 
-#details-wrapper button {
-  width: fit-content;
+.back-div a {
   margin-left: 750px;
   background: #5c9596;
   color: white;
-  margin-top: 50px;
-  font-size: 20px;
+  padding-bottom: 7px;
+  padding-top: 7px;
+  padding-left: 13px;
+  padding-right: 13px;
+  text-decoration: none;
+  font-size: 21px;
+  width: 130px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.back-div {
+  margin-top: 23px;
 }

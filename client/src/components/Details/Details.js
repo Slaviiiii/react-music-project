@@ -24,7 +24,10 @@ export const Details = () => {
     return (
         <section id="details">
             <div id="details-wrapper">
-                <button className="back-btn" to={`/allMusic`}>Back</button>
+                <div className="back-div">
+                    <Link to={`/allMusic`}>Back</Link>
+                </div>
+
                 <img id="details-img" src={music.imgUrl} alt={`${music.artist}--${music.name}`} />
 
 
