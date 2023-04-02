@@ -62,23 +62,3 @@ footer {
 section {
   margin-bottom: 100px;
 }
-
-#home {
-  margin-top: 200px;
-}
-
-#home img {
-  display: block;
-  margin: auto;
-  height: 30%;
-  width: 30%;
-  background-color: transparent;
-}
-
-#home h2,
-#home h3 {
-  font-style: oblique;
-  font-size: 27px;
-  color: black;
-  text-align: center;
-}
