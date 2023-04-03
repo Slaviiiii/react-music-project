@@ -2,24 +2,42 @@ import { useParams, Link } from "react-router-dom";
 import { useEffect, useState, useContext } from "react";
 
 import { musicServiceFactory } from "../../services/musicService";
-import { useService } from "../../hooks/useService";
+import { commentServiceFactory } from "../../services/commentService";
+
 import { MusicContext } from "../../contexts/MusicContext";
+import { AuthContext } from "../../contexts/AuthContext";
+
+import { Comment } from "./Comment/Comment";
+import { AddComment } from "./AddComment/AddComment";
 
 export const Details = () => {
-    const auth = JSON.parse(localStorage.getItem("auth"));
-    const { musicId } = useParams();
+    const { userId, isAuthenticated, userEmail } = useContext(AuthContext);
     const [music, setMusic] = useState({});
-    const musicService = useService(musicServiceFactory);
+    const { musicId } = useParams();
     const { onDelete } = useContext(MusicContext);
 
+    const musicService = musicServiceFactory();
+    const commentService = commentServiceFactory();
+
     useEffect(() => {
-        musicService.getOne(musicId)
-            .then(result => {
-                setMusic(result);
+        Promise.all([
+            musicService.getOne(musicId),
+            commentService.getAll(musicId)
+        ]).then(([musicData, commentData]) => {
+            setMusic({
+                ...musicData,
+                comments: commentData
             });
+        });
     }, [musicId]);
 
-    const isOwner = auth._id === music._ownerId;
+    const onCommentCreate = async (values) => {
+        const result = await commentService.create(musicId, values.comment, userEmail);
+
+        return result;
+    };
+
+    const isOwner = userId === music._ownerId;
 
     return (
         <section id="details">
@@ -30,23 +48,39 @@ export const Details = () => {
 
                 <img id="details-img" src={music.imgUrl} alt={`${music.artist}--${music.name}`} />
 
+                <div id="content">
+                    <p id="details-name">
+                        Name: <span id="name">{music.name}</span>
+                    </p>
 
-                <p id="details-name">
-                    Name: <span id="name">{music.name}</span>
-                </p>
+                    <p id="details-artist">
+                        Artist: <span id="artist">{music.artist}</span>
+                    </p>
 
-                <p id="details-artist">
-                    Artist: <span id="artist">{music.artist}</span>
-                </p>
+                    <p id="details-genre">
+                        Genre: <span id="genre">{music.genre}</span>
+                    </p>
+                </div>
 
-                <p id="details-genre">
-                    Genre: <span id="genre">{music.genre}</span>
-                </p>
+
                 <div id="info-wrapper">
                     <div id="details-description">
                         <h4>Description:</h4>
-                        <span>{music.description}</span>
+                        <textarea defaultValue={music.description} id="description" name="description" rows="3" cols="50" maxLength="103" disabled />
                     </div>
+                </div>
+
+                <div className="details-comments">
+                    <h2>Comments:</h2>
+                    <ul>
+                        {music.comments && Object.values(music.comments).map(x => (
+                            <Comment key={`${x.username}--${x._id}`} {...x} />
+                        ))}
+                    </ul>
+
+                    {!music.comments && (
+                        <p className="no-comment">No comments.</p>
+                    )}
                 </div>
 
                 {isOwner && (
@@ -56,6 +90,8 @@ export const Details = () => {
                     </div>
                 )}
             </div>
+
+            {isAuthenticated && <AddComment onCommentCreate={onCommentCreate} />}
         </section>
     );
 };
