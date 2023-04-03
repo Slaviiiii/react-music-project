@@ -126,12 +126,16 @@
  }
 
  .no-comment {
-   font-size: 20px;
+   font-size: 22px;
  }
 
  .comment p {
    font-size: 21px;
    padding: 10px;
+ }
+
+ .comment img {
+   width: 20px;
  }
 
  #add-comment {
