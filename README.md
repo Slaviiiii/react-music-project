@@ -1,6 +1,6 @@
 
 # react-music-project
-A web application.
+My Web Application.
 
 ## Description
 This is a full stack web application, which users use to create an account, login with it and make their music ideas come true. Users can like other music if they are logged in. They can also read their own creations in order to edit and delete them.
@@ -23,19 +23,20 @@ The used Technologies are:
     1. Home page 
 
 
-![image](https://user-images.githubusercontent.com/106228555/229519606-27bd1e54-6762-42c6-9611-98f9d77c61a4.png)
+![image](https://user-images.githubusercontent.com/106228555/229508663-f2b75a65-4972-4eaa-8bb6-57399b581d74.png)
 
 
-    2. Catalog page with no music
+    2. Catalog page without music
 
 
-![image](https://user-images.githubusercontent.com/106228555/229519705-dac85577-c315-432b-b51c-03dd57b6556b.png)
+![image](https://user-images.githubusercontent.com/106228555/229508321-31ec2fcd-3d47-4ea6-8b72-651badb5a61d.png)
 
 
     3. Catalog page with music
 
 
-![image](https://user-images.githubusercontent.com/106228555/229519770-9e1705a9-8052-4fd3-a9b3-4b1151c51d7f.png)
+![image](https://user-images.githubusercontent.com/106228555/229509091-82bedeba-8382-4f7c-98a7-7aab6014042d.png)
+
 
 ## Get Started with
 
