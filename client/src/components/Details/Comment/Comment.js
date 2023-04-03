@@ -5,7 +5,7 @@ export const Comment = ({
 }) => {
     return (
         <li className="comment">
-            <p>{username}: {comment}</p>
+            <p><span>{username}: {comment} </span><img src="/images/pencil.png" alt="pencil" /></p>
         </li>
     );
 };

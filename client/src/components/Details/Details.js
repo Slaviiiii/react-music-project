@@ -34,7 +34,10 @@ export const Details = () => {
     const onCommentCreate = async (values) => {
         const result = await commentService.create(musicId, values.comment, userEmail);
 
-        return result;
+        setMusic(state => ({
+            ...state,
+            comments: [...state.comments, result]
+        }));
     };
 
     const isOwner = userId === music._ownerId;
@@ -76,11 +79,11 @@ export const Details = () => {
                         {music.comments && music.comments.map(x => (
                             <Comment key={`${x.username}--${x._id}`} {...x} />
                         ))}
-                    </ul>
 
-                    {!music.comments && (
-                        <p className="no-comment">No created comments yet.</p>
-                    )}
+                        {!music.comments?.length && (
+                            <p className="no-comment">No created comments yet.</p>
+                        )}
+                    </ul>
                 </div>
 
                 {isOwner && (
