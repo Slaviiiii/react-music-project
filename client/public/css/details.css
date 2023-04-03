@@ -120,3 +120,25 @@
  .back-div a:hover {
    background-color: #0056b3;
  }
+
+ .details-comments h2 {
+   margin-right: 715px;
+ }
+
+ .no-comment {
+   font-size: 20px;
+ }
+
+ .comment p {
+   font-size: 21px;
+   padding: 10px;
+ }
+
+ #add-comment {
+   background-color: #2890ff;
+   color: white;
+ }
+
+ #add-comment:hover {
+   background-color: #0056b3;
+ }
