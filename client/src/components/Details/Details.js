@@ -73,13 +73,13 @@ export const Details = () => {
                 <div className="details-comments">
                     <h2>Comments:</h2>
                     <ul>
-                        {music.comments && Object.values(music.comments).map(x => (
+                        {music.comments && music.comments.map(x => (
                             <Comment key={`${x.username}--${x._id}`} {...x} />
                         ))}
                     </ul>
 
                     {!music.comments && (
-                        <p className="no-comment">No comments.</p>
+                        <p className="no-comment">No created comments yet.</p>
                     )}
                 </div>
 
