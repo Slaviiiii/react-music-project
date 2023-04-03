@@ -49,7 +49,6 @@ export const Details = () => {
                     </div>
                 </div>
 
-                {/* <!--Edit and Delete are only for creator--> */}
                 {isOwner && (
                     <div id="actions">
                         <Link to={`/edit/${musicId}`} id="edit-btn">Edit</Link>
