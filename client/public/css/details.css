@@ -1,129 +1,122 @@
-#details-wrapper {
-  color: rgb(7, 6, 6);
-  background-color: #ffffff;
-  margin: 50px auto;
-  min-height: 300px;
-  width: 47%;
-  border: 2px ridge rgb(210, 208, 208);
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2), 0 3px 3px 0 rgba(0, 0, 0, 0.24);
-}
+ #details-wrapper {
+   color: rgb(7, 6, 6);
+   background-color: #ebebeb;
+   margin: 50px auto;
+   min-height: 300px;
+   width: 50%;
+   border: 2px ridge rgb(210, 208, 208);
+   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2), 0 3px 3px 0 rgba(0, 0, 0, 0.24);
+ }
 
-#details-wrapper img {
-  display: block;
-  margin: 30px auto;
-}
+ #details-name {
+   text-align: center;
+   font-weight: bold;
+   font-size: 29px;
+   margin-top: 20px;
+ }
 
-#details-name {
-  text-align: center;
-  font-weight: bold;
-  font-size: 29px;
-}
+ #details-artist {
+   text-align: center;
+   font-weight: bold;
+   font-size: 26px;
+   margin-top: 20px;
+ }
 
-#details-artist {
-  text-align: center;
-  font-weight: bold;
-  font-size: 26px;
-}
+ #details-genre {
+   text-align: center;
+   font-weight: bold;
+   font-size: 19px;
+ }
 
-#details-genre {
-  text-align: center;
-  font-weight: bold;
-  font-size: 19px;
-}
+ #info-wrapper {
+   margin-top: 80px;
+ }
 
-#info-wrapper {
-  display: flex;
-}
+ #details-description {
+   font-size: 24px;
+   width: 45%;
+   margin: 30px auto;
+   height: auto;
+   text-align: center;
+ }
 
-#details-description {
-  font-size: 24px;
-  width: 45%;
-  margin: 30px auto;
-  height: auto;
-  text-align: center;
-}
+ #content {
+   margin-top: 137px;
+ }
 
-#details-description span {
-  font-size: 21px;
-}
+ #details-description textarea {
+   font-size: 17px;
+ }
 
-#details-img {
-  width: 230px;
-  height: 200px;
-}
+ h4 {
+   text-align: center;
+ }
 
-#details-delete-wrapper {
-  color: rgb(7, 6, 6);
-  background-color: rgb(198, 201, 188);
-  margin: 50px auto;
-  min-height: 300px;
-  width: 40%;
-  border: 2px ridge rgb(210, 208, 208);
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2), 0 3px 3px 0 rgba(0, 0, 0, 0.24);
-}
+ .details-artist {
+   text-align: center;
+   font-size: 19px;
+ }
 
-#details-img {
-  margin-left: 250px;
-}
+ .delete-message {
+   text-align: center;
+   font-size: 24px;
+ }
 
-h4 {
-  text-align: center;
-}
+ span {
+   font-size: 17px;
+ }
 
-.details-artist {
-  text-align: center;
-  font-size: 19px;
-}
+ #actions {
+   display: flex;
+   justify-content: center;
+   margin-bottom: 25px;
+   margin-left: 500px;
+   margin-top: 40px;
+ }
 
-.delete-message {
-  text-align: center;
-  font-size: 24px;
-}
+ #actions a {
+   text-decoration: none;
+   margin: auto 20px;
+   font-size: 21px;
+   width: 130px;
+   padding: 10px;
+   text-align: center;
+   color: white;
+   background: #2890ff;
+ }
 
-span {
-  font-size: 17px;
-}
+ #details-img {
+   position: relative;
+   float: left;
+   margin-left: 15px;
+   margin-right: 22px;
+   height: 220px;
+   box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.5);
+ }
 
-#actions {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 25px;
-}
+ .back-div a {
+   margin-left: 750px;
+   float: right;
+   background: #2890ff;
+   color: white;
+   padding-bottom: 7px;
+   padding-top: 7px;
+   text-decoration: none;
+   font-size: 21px;
+   width: 100px;
+   margin-right: 25px;
+   text-align: center;
+   margin-bottom: 20px;
+ }
 
-#actions a {
-  text-decoration: none;
-  margin: auto 50px;
-  font-size: 21px;
-  width: 130px;
-  padding: 10px;
-  text-align: center;
-  color: white;
-  background: #2890ff;
-}
+ .back-div {
+   margin-top: 24px;
+ }
 
-.back-div a {
-  margin-left: 750px;
-  background: #2890ff;
-  color: white;
-  padding-bottom: 7px;
-  padding-top: 7px;
-  padding-left: 13px;
-  padding-right: 13px;
-  text-decoration: none;
-  font-size: 21px;
-  width: 130px;
-  text-align: center;
-  margin-bottom: 20px;
-}
+ #actions a:hover {
+   background-color: #0056b3;
+ }
 
-.back-div {
-  margin-top: 23px;
-}
-
-#actions a:hover {
-  background-color: #0056b3;
-}
-
-.back-div a:hover {
-  background-color: #0056b3;
-}
+ .back-div a:hover {
+   background-color: #0056b3;
+ }
