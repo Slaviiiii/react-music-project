@@ -5,6 +5,7 @@ A web application.
 ## Description
 This is a full stack web application, which users use to create an account, login with it and make their music ideas come true. Users can like other music if they are logged in. They can also read their own creations in order to edit and delete them.
 
+
 - For Routes it uses react-router-dom.
 - A React hook form is used for the validation. 
 
@@ -19,23 +20,22 @@ The used Technologies are:
 
 ## Pages
 
-
     1. Home page 
 
 
- ![image](https://user-images.githubusercontent.com/106228555/227710230-7eead2aa-2b8d-45c6-8e7e-550729de2363.png)
+![image](https://user-images.githubusercontent.com/106228555/229519606-27bd1e54-6762-42c6-9611-98f9d77c61a4.png)
 
 
     2. Catalog page with no music
 
 
-![image](https://user-images.githubusercontent.com/106228555/227710105-4173c800-c2a4-4461-94ab-3c3ca46685bd.png)
+![image](https://user-images.githubusercontent.com/106228555/229519705-dac85577-c315-432b-b51c-03dd57b6556b.png)
 
 
     3. Catalog page with music
 
 
-![image](https://user-images.githubusercontent.com/106228555/227710863-ab464a44-2406-4e06-b022-04eb1e9f063a.png)
+![image](https://user-images.githubusercontent.com/106228555/229519770-9e1705a9-8052-4fd3-a9b3-4b1151c51d7f.png)
 
 ## Get Started with
 
