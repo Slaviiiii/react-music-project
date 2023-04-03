@@ -26,10 +26,10 @@ The used Technologies are:
  ![image](https://user-images.githubusercontent.com/106228555/227710230-7eead2aa-2b8d-45c6-8e7e-550729de2363.png)
 
 
-    2. Catalog page with no music
+    2. Catalog page without music
 
 
-![image](https://user-images.githubusercontent.com/106228555/227710105-4173c800-c2a4-4461-94ab-3c3ca46685bd.png)
+![image](https://user-images.githubusercontent.com/106228555/229508321-31ec2fcd-3d47-4ea6-8b72-651badb5a61d.png)
 
 
     3. Catalog page with music
