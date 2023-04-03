@@ -35,7 +35,7 @@ export const musicServiceFactory = () => {
 
     const deleteFunc = async (musicId) => {
         await request.del(`${baseUrl}/${musicId}`);
-    }
+    };
 
     return {
         getAll,
