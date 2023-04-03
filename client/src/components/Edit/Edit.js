@@ -2,13 +2,12 @@ import { useParams, Link } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 
 import { musicServiceFactory } from "../../services/musicService";
-import { useService } from "../../hooks/useService";
 import { MusicContext } from "../../contexts/MusicContext";
 
 export const Edit = () => {
     const { musicId } = useParams();
     const [values, setValues] = useState({});
-    const musicService = useService(musicServiceFactory);
+    const musicService = musicServiceFactory();
     const { onMusicEditSubmit } = useContext(MusicContext);
 
     useEffect(() => {
@@ -37,7 +36,7 @@ export const Edit = () => {
                     <input defaultValue={values.imgUrl} onChange={onChangeHandler} type="text" name="imgUrl" id="imageUrl" />
                     <input defaultValue={values.genre} onChange={onChangeHandler} type="text" name="genre" id="genre" />
                     <input defaultValue={values.artist} onChange={onChangeHandler} type="text" name="artist" id="artist" />
-                    <textarea defaultValue={values.description} onChange={onChangeHandler} id="description" name="description" rows="4" cols="50"></textarea>
+                    <textarea defaultValue={values.description} onChange={onChangeHandler} id="description" name="description" rows="3" cols="50" maxLength="103"></textarea>
 
                     <button type="submit">send</button>
                 </form>
