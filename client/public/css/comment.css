@@ -7,12 +7,20 @@
     padding: 10px;
 }
 
-.comment #pencil {
+#pencil {
     width: 25px;
 }
 
-.comment #garbage {
+#pencil:hover {
+    background-color: rgb(90, 143, 240);
+}
+
+#garbage {
     width: 30px;
+}
+
+#garbage:hover {
+    background-color: rgb(90, 143, 240);
 }
 
 .comment {
