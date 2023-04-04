@@ -91,7 +91,7 @@ export const Details = () => {
                 <div id="info-wrapper">
                     <div id="details-description">
                         <h4>Description:</h4>
-                        <textarea defaultValue={music.description} id="description" name="description" rows="3" cols="50" maxLength="130" disabled />
+                        <textarea defaultValue={music.description} id="description" name="description" rows="3" cols="50" maxLength="110" disabled />
                     </div>
                 </div>
 

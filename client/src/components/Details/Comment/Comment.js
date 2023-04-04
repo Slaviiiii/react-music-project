@@ -13,7 +13,7 @@ export const Comment = ({
         <li className="comment">
             <p>
                 <span>{username}: </span>
-                <input type="text" value={comment} size="60" disabled />
+                <input type="text" value={comment} size="62" disabled />
                 {isOwner && (
                     <>
                         {/* Todo edit: <input type="image" src="../images/pencil.png" onClick={() => onCommentEdit(_id, { comment, username })} id="pencil"></input>  */}
