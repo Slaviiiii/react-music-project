@@ -40,6 +40,19 @@ export const Details = () => {
         }));
     };
 
+    const onCommentDelete = async (_id) => {
+        const result = window.confirm("Are you sure you want to delete this comment?");
+
+        if (result === true) {
+            await commentService.deleteFunc(_id);
+
+            setMusic(state => ({
+                ...state,
+                comments: [...state.comments.filter(c => c._id !== _id)]
+            }))
+        }
+    };
+
     const isOwner = userId === music._ownerId;
 
     return (
@@ -77,7 +90,7 @@ export const Details = () => {
                     <h2>Comments:</h2>
                     <ul>
                         {music.comments && music.comments.map(x => (
-                            <Comment key={`${x.username}--${x._id}`} {...x} />
+                            <Comment key={`${x.username}--${x._id}`} {...x} userId={userId} onCommentDelete={onCommentDelete} />
                         ))}
 
                         {!music.comments?.length && (
