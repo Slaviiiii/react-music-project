@@ -1,0 +1,29 @@
+.no-comment {
+    font-size: 22px;
+}
+
+.comment p {
+    font-size: 20px;
+    padding: 10px;
+}
+
+.comment img {
+    width: 25px;
+}
+
+.comment {
+    border-radius: 10px;
+    border-style: solid;
+    background-color: #7cade2;
+    border-color: #0056b3;
+    margin-top: 17px;
+}
+
+#add-comment {
+    background-color: #2890ff;
+    color: white;
+}
+
+#add-comment:hover {
+    background-color: #0056b3;
+}
