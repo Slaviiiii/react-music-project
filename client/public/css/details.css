@@ -15,6 +15,10 @@
    margin-top: 20px;
  }
 
+ #details-name span {
+   font-size: 26px;
+ }
+
  #details-artist {
    text-align: center;
    font-weight: bold;
@@ -22,10 +26,18 @@
    margin-top: 20px;
  }
 
+ #details-artist span {
+   font-size: 26px;
+ }
+
  #details-genre {
    text-align: center;
    font-weight: bold;
-   font-size: 19px;
+   font-size: 26px;
+ }
+
+ #details-genre span {
+   font-size: 26px;
  }
 
  #info-wrapper {
@@ -50,11 +62,6 @@
 
  h4 {
    text-align: center;
- }
-
- .details-artist {
-   text-align: center;
-   font-size: 19px;
  }
 
  .delete-message {
