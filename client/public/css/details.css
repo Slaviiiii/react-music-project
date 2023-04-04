@@ -15,6 +15,10 @@
    margin-top: 20px;
  }
 
+ #details-name span {
+   font-size: 26px;
+ }
+
  #details-artist {
    text-align: center;
    font-weight: bold;
@@ -22,10 +26,18 @@
    margin-top: 20px;
  }
 
+ #details-artist span {
+   font-size: 26px;
+ }
+
  #details-genre {
    text-align: center;
    font-weight: bold;
-   font-size: 19px;
+   font-size: 26px;
+ }
+
+ #details-genre span {
+   font-size: 26px;
  }
 
  #info-wrapper {
@@ -50,11 +62,6 @@
 
  h4 {
    text-align: center;
- }
-
- .details-artist {
-   text-align: center;
-   font-size: 19px;
  }
 
  .delete-message {
@@ -125,24 +132,17 @@
    margin-right: 715px;
  }
 
- .no-comment {
-   font-size: 22px;
+ /* #pencil {
+   margin-left: 200px;
+   margin-right: 20px;
+   width: 25px;
+ } */
+
+ #garbage {
+   margin-left: 200px;
+   width: 18px;
  }
 
- .comment p {
-   font-size: 21px;
-   padding: 10px;
- }
-
- .comment img {
-   width: 20px;
- }
-
- #add-comment {
-   background-color: #2890ff;
-   color: white;
- }
-
- #add-comment:hover {
-   background-color: #0056b3;
+ #like-span {
+   font-size: 35px;
  }

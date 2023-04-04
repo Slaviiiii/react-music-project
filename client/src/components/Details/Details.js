@@ -3,6 +3,7 @@ import { useEffect, useState, useContext } from "react";
 
 import { musicServiceFactory } from "../../services/musicService";
 import { commentServiceFactory } from "../../services/commentService";
+import { likeServiceFactory } from "../../services/likeService";
 
 import { MusicContext } from "../../contexts/MusicContext";
 import { AuthContext } from "../../contexts/AuthContext";
@@ -15,7 +16,9 @@ export const Details = () => {
     const [music, setMusic] = useState({});
     const { musicId } = useParams();
     const { onDelete } = useContext(MusicContext);
+    // const isEddited = false; Todo: edit.
 
+    const likeService = likeServiceFactory();
     const musicService = musicServiceFactory();
     const commentService = commentServiceFactory();
 
@@ -39,6 +42,33 @@ export const Details = () => {
             comments: [...state.comments, result]
         }));
     };
+
+    const onCommentDelete = async (commentId) => {
+        const result = window.confirm("Are you sure you want to delete this comment?");
+
+        if (result === true) {
+            await commentService.deleteFunc(commentId);
+
+            setMusic(state => ({
+                ...state,
+                comments: [...state.comments.filter(c => c._id !== commentId)]
+            }));
+        }
+    };
+
+    const onLike = async (e) => {
+        e.preventDefault();
+
+        await likeService.addLike({ likes: 1 });
+    };
+
+    //Todo edit.
+    // const onCommentEdit = async (commentId, data) => {
+    //     const result = await commentService.edit(commentId, data);
+    //     isEddited = true;
+
+    //     return result;
+    // };
 
     const isOwner = userId === music._ownerId;
 
@@ -69,7 +99,7 @@ export const Details = () => {
                 <div id="info-wrapper">
                     <div id="details-description">
                         <h4>Description:</h4>
-                        <textarea defaultValue={music.description} id="description" name="description" rows="3" cols="50" maxLength="103" disabled />
+                        <textarea defaultValue={music.description} id="description" name="description" rows="3" cols="50" maxLength="110" disabled />
                     </div>
                 </div>
 
@@ -77,7 +107,7 @@ export const Details = () => {
                     <h2>Comments:</h2>
                     <ul>
                         {music.comments && music.comments.map(x => (
-                            <Comment key={`${x.username}--${x._id}`} {...x} />
+                            <Comment key={`${x.username}--${x._id}`} {...x} userId={userId} onCommentDelete={onCommentDelete} />
                         ))}
 
                         {!music.comments?.length && (
@@ -86,15 +116,24 @@ export const Details = () => {
                     </ul>
                 </div>
 
+                {!isOwner && (
+                    <div id="like-div">
+                        <span id="like-span"><input onClick={onLike} type="image" src="../images/like.jpg" id="garbage" />: {music.likes}</span>
+                    </div>
+                )}
+
                 {isOwner && (
                     <div id="actions">
+                        <span></span>
                         <Link to={`/edit/${musicId}`} id="edit-btn">Edit</Link>
                         <Link onClick={() => onDelete(musicId)}>Delete</Link>
                     </div>
                 )}
             </div>
 
-            {isAuthenticated && <AddComment onCommentCreate={onCommentCreate} />}
+            {isAuthenticated && !isOwner && (
+                <AddComment onCommentCreate={onCommentCreate} />
+            )}
         </section>
     );
 };
