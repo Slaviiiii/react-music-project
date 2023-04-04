@@ -16,7 +16,7 @@ export const musicServiceFactory = () => {
     };
 
     const create = async (musicData) => {
-        const result = await request.post(baseUrl, { ...musicData, likes: 0 });
+        const result = await request.post(baseUrl, musicData);
 
         return result;
     };
