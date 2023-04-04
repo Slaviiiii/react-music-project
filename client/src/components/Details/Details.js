@@ -15,7 +15,7 @@ export const Details = () => {
     const [music, setMusic] = useState({});
     const { musicId } = useParams();
     const { onDelete } = useContext(MusicContext);
-    const isEddited = false;
+    // const isEddited = false;Todo: edit.
 
     const musicService = musicServiceFactory();
     const commentService = commentServiceFactory();
@@ -54,12 +54,13 @@ export const Details = () => {
         }
     };
 
-    const onCommentEdit = async (commentId, data) => {
-        const result = await commentService.edit(commentId, data);
-        isEddited = true;
+    //Todo edit.
+    // const onCommentEdit = async (commentId, data) => {
+    //     const result = await commentService.edit(commentId, data);
+    //     isEddited = true;
 
-        return result;
-    };
+    //     return result;
+    // };
 
     const isOwner = userId === music._ownerId;
 
@@ -98,7 +99,7 @@ export const Details = () => {
                     <h2>Comments:</h2>
                     <ul>
                         {music.comments && music.comments.map(x => (
-                            <Comment key={`${x.username}--${x._id}`} {...x} userId={userId} onCommentDelete={onCommentDelete} onCommentEdit={onCommentEdit} isEddited={isEddited} />
+                            <Comment key={`${x.username}--${x._id}`} {...x} userId={userId} onCommentDelete={onCommentDelete} />
                         ))}
 
                         {!music.comments?.length && (
