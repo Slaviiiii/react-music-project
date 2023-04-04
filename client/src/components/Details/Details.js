@@ -58,12 +58,8 @@ export const Details = () => {
 
     const onLike = async (e) => {
         e.preventDefault();
-        console.log("+1 like");
-        setMusic(state => ({
-            ...state, likes: ++state.likes
-        }));
 
-        await likeService.addLike(music);
+        await likeService.addLike({ likes: 1 });
     };
 
     //Todo edit.

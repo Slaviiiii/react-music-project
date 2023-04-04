@@ -6,7 +6,7 @@ export const likeServiceFactory = () => {
     const request = requestFactory();
 
     const addLike = async (data) => {
-        const result = await request.put(`${baseUrl}/${data._id}`, data);
+        const result = await request.post(baseUrl, data);
 
         return result;
     }
