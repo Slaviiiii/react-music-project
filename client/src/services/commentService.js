@@ -20,8 +20,13 @@ export const commentServiceFactory = () => {
         return result;
     };
 
+    const deleteFunc = async (commentId) => {
+        await request.del(`${baseUrl}/${commentId}`);
+    }
+
     return {
         getAll,
         create,
+        deleteFunc,
     };
 }
