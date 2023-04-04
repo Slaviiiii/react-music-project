@@ -91,7 +91,7 @@ export const Details = () => {
                 <div id="info-wrapper">
                     <div id="details-description">
                         <h4>Description:</h4>
-                        <textarea defaultValue={music.description} id="description" name="description" rows="3" cols="50" maxLength="103" disabled />
+                        <textarea defaultValue={music.description} id="description" name="description" rows="3" cols="50" maxLength="130" disabled />
                     </div>
                 </div>
 
@@ -108,8 +108,15 @@ export const Details = () => {
                     </ul>
                 </div>
 
+                {!isOwner && (
+                    <div id="like-div">
+                        <span id="like-span"><input type="image" src="../images/like.jpg" id="garbage" />: all likes</span>
+                    </div>
+                )}
+
                 {isOwner && (
                     <div id="actions">
+                        <span></span>
                         <Link to={`/edit/${musicId}`} id="edit-btn">Edit</Link>
                         <Link onClick={() => onDelete(musicId)}>Delete</Link>
                     </div>
