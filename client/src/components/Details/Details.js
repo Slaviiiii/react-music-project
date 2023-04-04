@@ -54,6 +54,16 @@ export const Details = () => {
         }
     };
 
+    const onLike = async (e) => {
+        e.preventDefault();
+        console.log("+1 like");
+        setMusic(state => ({
+            ...state, likes: ++state.likes
+        }));
+
+        await musicService.addLike(music);
+    };
+
     //Todo edit.
     // const onCommentEdit = async (commentId, data) => {
     //     const result = await commentService.edit(commentId, data);
@@ -110,7 +120,7 @@ export const Details = () => {
 
                 {!isOwner && (
                     <div id="like-div">
-                        <span id="like-span"><input type="image" src="../images/like.jpg" id="garbage" />: all likes</span>
+                        <span id="like-span"><input onClick={onLike} type="image" src="../images/like.jpg" id="garbage" />: {music.likes}</span>
                     </div>
                 )}
 
