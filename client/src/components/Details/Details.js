@@ -15,6 +15,7 @@ export const Details = () => {
     const [music, setMusic] = useState({});
     const { musicId } = useParams();
     const { onDelete } = useContext(MusicContext);
+    const isEddited = false;
 
     const musicService = musicServiceFactory();
     const commentService = commentServiceFactory();
@@ -40,17 +41,24 @@ export const Details = () => {
         }));
     };
 
-    const onCommentDelete = async (_id) => {
+    const onCommentDelete = async (commentId) => {
         const result = window.confirm("Are you sure you want to delete this comment?");
 
         if (result === true) {
-            await commentService.deleteFunc(_id);
+            await commentService.deleteFunc(commentId);
 
             setMusic(state => ({
                 ...state,
-                comments: [...state.comments.filter(c => c._id !== _id)]
-            }))
+                comments: [...state.comments.filter(c => c._id !== commentId)]
+            }));
         }
+    };
+
+    const onCommentEdit = async (commentId, data) => {
+        const result = await commentService.edit(commentId, data);
+        isEddited = true;
+
+        return result;
     };
 
     const isOwner = userId === music._ownerId;
@@ -90,7 +98,7 @@ export const Details = () => {
                     <h2>Comments:</h2>
                     <ul>
                         {music.comments && music.comments.map(x => (
-                            <Comment key={`${x.username}--${x._id}`} {...x} userId={userId} onCommentDelete={onCommentDelete} />
+                            <Comment key={`${x.username}--${x._id}`} {...x} userId={userId} onCommentDelete={onCommentDelete} onCommentEdit={onCommentEdit} isEddited={isEddited} />
                         ))}
 
                         {!music.comments?.length && (
