@@ -3,6 +3,7 @@ import { useEffect, useState, useContext } from "react";
 
 import { musicServiceFactory } from "../../services/musicService";
 import { commentServiceFactory } from "../../services/commentService";
+import { likeServiceFactory } from "../../services/likeService";
 
 import { MusicContext } from "../../contexts/MusicContext";
 import { AuthContext } from "../../contexts/AuthContext";
@@ -15,8 +16,9 @@ export const Details = () => {
     const [music, setMusic] = useState({});
     const { musicId } = useParams();
     const { onDelete } = useContext(MusicContext);
-    // const isEddited = false;Todo: edit.
+    // const isEddited = false; Todo: edit.
 
+    const likeService = likeServiceFactory();
     const musicService = musicServiceFactory();
     const commentService = commentServiceFactory();
 
@@ -61,7 +63,7 @@ export const Details = () => {
             ...state, likes: ++state.likes
         }));
 
-        await musicService.addLike(music);
+        await likeService.addLike(music);
     };
 
     //Todo edit.
