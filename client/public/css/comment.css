@@ -7,8 +7,12 @@
     padding: 10px;
 }
 
-.comment img {
+.comment #pencil {
     width: 25px;
+}
+
+.comment #garbage {
+    width: 30px;
 }
 
 .comment {
