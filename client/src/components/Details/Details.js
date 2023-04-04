@@ -94,7 +94,9 @@ export const Details = () => {
                 )}
             </div>
 
-            {isAuthenticated && <AddComment onCommentCreate={onCommentCreate} />}
+            {isAuthenticated && !isOwner && (
+                <AddComment onCommentCreate={onCommentCreate} />
+            )}
         </section>
     );
 };
