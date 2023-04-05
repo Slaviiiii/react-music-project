@@ -9,9 +9,28 @@ export const likeServiceFactory = () => {
         const result = await request.post(baseUrl, data);
 
         return result;
-    }
+    };
+
+    const getAll = async (musicId) => {
+        const query = encodeURIComponent(`musicId="${musicId}"`);
+
+        const result = await request.get(`${baseUrl}?where=${query}`);
+
+        if (!result) {
+            return [];
+        }
+        const likes = Object.values(result);
+
+        return likes;
+    };
+
+    const removeLike = async (id) => {
+        await request.del(`${baseUrl}/${id}`);
+    };
 
     return {
-        addLike
+        addLike,
+        getAll,
+        removeLike
     };
 };

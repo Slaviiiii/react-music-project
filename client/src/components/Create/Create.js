@@ -10,7 +10,6 @@ export const Create = () => {
         genre: '',
         artist: '',
         description: '',
-        likes: 0,
     }, onMusicCreateSubmit);
 
     return (
