@@ -10,6 +10,7 @@ export const MusicProvider = ({
 }) => {
     const navigate = useNavigate();
     const [music, setMusic] = useState([]);
+    const [createError, setCreateError] = useState({});
     const musicService = musicServiceFactory();
 
     useEffect(() => {
@@ -31,6 +32,19 @@ export const MusicProvider = ({
     };
 
     const onMusicCreateSubmit = async (data) => {
+        if (data.artist === '' || data.name === '' || data.genre === '' || data.description === '' || data.imgUrl === '') {
+            setCreateError({
+                message: "There is a missing field!",
+                data: {
+                    name: data.name,
+                    imgUrl: data.imgUrl,
+                    artist: data.artist,
+                    genre: data.genre,
+                    description: data.description,
+                }
+            });
+            return;
+        }
         const newMusic = await musicService.create(data);
 
         navigate('/allMusic');
@@ -46,6 +60,7 @@ export const MusicProvider = ({
     };
 
     const contextValues = {
+        createError,
         music,
         onDelete,
         onMusicCreateSubmit,

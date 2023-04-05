@@ -2,8 +2,10 @@ import { useContext } from "react";
 import { useForm } from "../../hooks/useForm";
 import { MusicContext } from "../../contexts/MusicContext";
 
+import { useForm } from "react-hook-form";
+
 export const Create = () => {
-    const { onMusicCreateSubmit } = useContext(MusicContext);
+    const { onMusicCreateSubmit, createError } = useContext(MusicContext);
     const { values, changeHandler, onSubmit } = useForm({
         name: '',
         imgUrl: '',
@@ -15,6 +17,14 @@ export const Create = () => {
     return (
         <section id="create">
             <div className="form">
+                {createError.message && (
+                    <div id="error-modal">
+                        <p>
+                            <span>Error: {createError.message}</span>
+                        </p>
+                    </div>
+                )}
+
                 <h2>Create Music</h2>
                 <form className="create-form" method="POST" onSubmit={onSubmit}>
                     <input value={values.name} onChange={changeHandler} type="text" name="name" id="name" placeholder="Name" />
@@ -26,6 +36,6 @@ export const Create = () => {
                     <button type="submit">send</button>
                 </form>
             </div>
-        </section>
+        </section >
     );
 };
