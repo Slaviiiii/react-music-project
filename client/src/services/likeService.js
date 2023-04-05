@@ -11,7 +11,17 @@ export const likeServiceFactory = () => {
         return result;
     }
 
+    const getAll = async (musicId) => {
+        const query = encodeURIComponent(`musicId="${musicId}"`);
+
+        const result = await request.get(`${baseUrl}?where=${query}`);
+        const likes = Object.values(result);
+
+        return likes;
+    };
+
     return {
-        addLike
+        addLike,
+        getAll
     };
 };

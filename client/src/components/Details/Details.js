@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState, useContext, lazy } from "react";
 
 import { musicServiceFactory } from "../../services/musicService";
 import { commentServiceFactory } from "../../services/commentService";
@@ -25,11 +25,13 @@ export const Details = () => {
     useEffect(() => {
         Promise.all([
             musicService.getOne(musicId),
-            commentService.getAll(musicId)
-        ]).then(([musicData, commentData]) => {
+            commentService.getAll(musicId),
+            likeService.getAll(musicId),
+        ]).then(([musicData, commentData, likeData]) => {
             setMusic({
                 ...musicData,
-                comments: commentData
+                comments: commentData,
+                likes: likeData,
             });
         });
     }, [musicId]);
@@ -59,7 +61,23 @@ export const Details = () => {
     const onLike = async (e) => {
         e.preventDefault();
 
-        await likeService.addLike({ likes: 1 });
+        if (music.likes.length === 0) {
+            const result = await likeService.addLike({ username: userEmail, musicId });
+            setMusic(state => ({
+                ...state,
+                likes: [result]
+            }));
+        } else {
+            const allLikes = music.likes.filter(l => l.username === userEmail);
+
+            if (allLikes.length < 1) {
+                const result = await likeService.addLike({ username: userEmail, musicId });
+                setMusic(state => ({
+                    ...state,
+                    likes: [...state.likes, result]
+                }));
+            }
+        }
     };
 
     //Todo edit.
@@ -116,9 +134,15 @@ export const Details = () => {
                     </ul>
                 </div>
 
+                {isOwner && (
+                    <div id="like-div">
+                        <span id="like-span"><input type="image" src="../images/like.jpg" />: {music.likes?.length} </span>
+                    </div>
+                )}
+
                 {!isOwner && (
                     <div id="like-div">
-                        <span id="like-span"><input onClick={onLike} type="image" src="../images/like.jpg" id="garbage" />: {music.likes}</span>
+                        <span id="like-span"><input onClick={onLike} type="image" src="../images/like.jpg" id="garbage" />: {music.likes?.length} </span>
                     </div>
                 )}
 

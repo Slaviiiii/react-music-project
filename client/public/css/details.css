@@ -146,3 +146,8 @@
  #like-span {
    font-size: 35px;
  }
+
+ #dislike-btn {
+   width: 30px;
+   margin-left: 25px;
+ }
