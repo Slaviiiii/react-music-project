@@ -76,6 +76,12 @@ export const Details = () => {
                     ...state,
                     likes: [...state.likes, result]
                 }));
+            } else if (allLikes.length === 1) {
+                await likeService.removeLike(allLikes[0]._id);
+                setMusic(state => ({
+                    ...state,
+                    likes: [...state.likes.filter(l => l._id !== allLikes[0]._id)]
+                }));
             }
         }
     };
@@ -136,13 +142,13 @@ export const Details = () => {
 
                 {isOwner && (
                     <div id="like-div">
-                        <span id="like-span"><input type="image" src="../images/like.jpg" id="garbage" />: {music.likes?.length}</span>
+                        <span id="like-span"><input type="image" src="../images/like.jpg" id="garbage" alt="like" />: {music.likes?.length}</span>
                     </div>
                 )}
 
                 {!isOwner && (
                     <div id="like-div">
-                        <span id="like-span"><input onClick={onLike} type="image" src="../images/like.jpg" id="garbage" />: {music.likes?.length}</span>
+                        <span id="like-span"><input onClick={onLike} type="image" src="../images/like.jpg" id="garbage" alt="like" />: {music.likes?.length}</span>
                     </div>
                 )}
 
