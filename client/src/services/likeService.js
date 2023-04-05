@@ -15,6 +15,10 @@ export const likeServiceFactory = () => {
         const query = encodeURIComponent(`musicId="${musicId}"`);
 
         const result = await request.get(`${baseUrl}?where=${query}`);
+
+        if (!result) {
+            return [];
+        }
         const likes = Object.values(result);
 
         return likes;
