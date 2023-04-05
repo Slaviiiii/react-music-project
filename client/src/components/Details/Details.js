@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { useEffect, useState, useContext, lazy } from "react";
+import { useEffect, useState, useContext } from "react";
 
 import { musicServiceFactory } from "../../services/musicService";
 import { commentServiceFactory } from "../../services/commentService";
@@ -31,7 +31,7 @@ export const Details = () => {
             setMusic({
                 ...musicData,
                 comments: commentData,
-                likes: likeData,
+                likes: likeData
             });
         });
     }, [musicId]);
@@ -136,13 +136,13 @@ export const Details = () => {
 
                 {isOwner && (
                     <div id="like-div">
-                        <span id="like-span"><input type="image" src="../images/like.jpg" />: {music.likes?.length} </span>
+                        <span id="like-span"><input type="image" src="../images/like.jpg" id="garbage" />: {music.likes?.length}</span>
                     </div>
                 )}
 
                 {!isOwner && (
                     <div id="like-div">
-                        <span id="like-span"><input onClick={onLike} type="image" src="../images/like.jpg" id="garbage" />: {music.likes?.length} </span>
+                        <span id="like-span"><input onClick={onLike} type="image" src="../images/like.jpg" id="garbage" />: {music.likes?.length}</span>
                     </div>
                 )}
 
