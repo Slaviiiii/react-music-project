@@ -1,37 +1,25 @@
 import { useContext } from "react";
-import { useForm } from "../../hooks/useForm";
+
 import { MusicContext } from "../../contexts/MusicContext";
 
 import { useForm } from "react-hook-form";
 
 export const Create = () => {
-    const { onMusicCreateSubmit, createError } = useContext(MusicContext);
-    const { values, changeHandler, onSubmit } = useForm({
-        name: '',
-        imgUrl: '',
-        genre: '',
-        artist: '',
-        description: '',
-    }, onMusicCreateSubmit);
+    const { onMusicCreateSubmit } = useContext(MusicContext);
+    const { register, handleSubmit, formState: { errors } } = useForm();
+
+
 
     return (
         <section id="create">
             <div className="form">
-                {createError.message && (
-                    <div id="error-modal">
-                        <p>
-                            <span>Error: {createError.message}</span>
-                        </p>
-                    </div>
-                )}
-
                 <h2>Create Music</h2>
-                <form className="create-form" method="POST" onSubmit={onSubmit}>
-                    <input value={values.name} onChange={changeHandler} type="text" name="name" id="name" placeholder="Name" />
-                    <input value={values.imgUrl} onChange={changeHandler} type="text" name="imgUrl" id="imageUrl" placeholder="Image" />
-                    <input value={values.genre} onChange={changeHandler} type="text" name="genre" id="genre" placeholder="Genre" />
-                    <input value={values.artist} onChange={changeHandler} type="text" name="artist" id="artist" placeholder="Artist" />
-                    <textarea value={values.description} onChange={changeHandler} id="description" name="description" placeholder="Description" rows="4" cols="50"></textarea>
+                <form className="create-form" method="POST" onSubmit={handleSubmit(onMusicCreateSubmit)}>
+                    <input type="text" {...register("name", { required: true, minLength: 3, maxLength: 20 })} id="name" placeholder="Name" />
+                    <input {...register("imgUrl", { required: true, })} type="text" id="imageUrl" placeholder="Image" />
+                    <input {...register("genre", { required: true, minLength: 3, maxLength: 20 })} type="text" id="genre" placeholder="Genre" />
+                    <input {...register("artist", { required: true, minLength: 3, maxLength: 20 })} type="text" name="artist" id="artist" placeholder="Artist" />
+                    <textarea {...register("description", { required: true, minLength: 10, maxLength: 140 })} id="description" name="description" placeholder="Description" maxLength="140" rows="3" cols="50"></textarea>
 
                     <button type="submit">send</button>
                 </form>
