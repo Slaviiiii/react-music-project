@@ -10,7 +10,15 @@ export const Create = () => {
         register,
         handleSubmit,
         formState: { errors }
-    } = useForm();
+    } = useForm({
+        defaultValues: {
+            name: "",
+            imgUrl: "",
+            genre: "",
+            artist: "",
+            description: "",
+        }
+    });
 
     return (
         <section id="create">

@@ -1,4 +1,4 @@
 
-export const errorTimeout = (className) => {
+// export const errorTimeout = (className) => {
 
-}
+// }

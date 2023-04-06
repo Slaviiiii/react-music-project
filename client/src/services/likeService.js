@@ -16,7 +16,7 @@ export const likeServiceFactory = () => {
 
         const result = await request.get(`${baseUrl}?where=${query}`);
 
-        if (!result) {
+        if (result === "Resource not found" || !result) {
             return [];
         }
         const likes = Object.values(result);
