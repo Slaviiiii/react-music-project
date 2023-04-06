@@ -13,17 +13,6 @@ export const AuthProvider = ({
     const [auth, setAuth] = useLocalStorage("auth", {});
     const authService = authServiceFactory();
 
-    const onLoginSubmit = async (data) => {
-        try {
-            const result = await authService.login(data);
-
-            setAuth(result);
-            navigate('/');
-        } catch (err) {
-            console.log('Login problem!');
-        }
-    };
-
     const onRegisterSubmit = async (data) => {
         const { 're-password': repeatPassword, ...registerData } = data;
         if (repeatPassword !== registerData.password) {
@@ -44,10 +33,10 @@ export const AuthProvider = ({
         await authService.logout();
 
         setAuth({});
+        localStorage.clear();
     };
 
     const contextValues = {
-        onLoginSubmit,
         onRegisterSubmit,
         onLogout,
         userId: auth._id,

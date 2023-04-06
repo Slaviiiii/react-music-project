@@ -45,7 +45,8 @@ const request = async (method, url, data) => {
 
         return result;
     } catch (error) {
-        console.log(error.message);
+        window.alert(error.message);
+        return error.message;
     }
 }
 
