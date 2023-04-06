@@ -1363,7 +1363,10 @@
             }
         },
         comments: {
-        
+
+        },
+        allMusic: {
+
         }
     };
     var rules$1 = {
