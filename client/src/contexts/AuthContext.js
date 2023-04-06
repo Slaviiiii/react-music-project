@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { authServiceFactory } from "../services/authService";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 
+import { useForm } from "react-hook-form";
+
 export const AuthContext = createContext();
 
 export const AuthProvider = ({
@@ -12,16 +14,21 @@ export const AuthProvider = ({
     const navigate = useNavigate();
     const [auth, setAuth] = useLocalStorage("auth", {});
     const authService = authServiceFactory();
+    const { setError } = useForm();
 
     const onLoginSubmit = async (data) => {
-        try {
-            const result = await authService.login(data);
+        const result = await authService.login(data);
 
+        if (result) {
             setAuth(result);
             navigate('/');
-        } catch (err) {
-            console.log('Login problem!');
+            return;
         }
+
+        setError('loginError', {
+            type: "custom",
+            message: "Login or password don't match!"
+        });
     };
 
     const onRegisterSubmit = async (data) => {
@@ -44,6 +51,7 @@ export const AuthProvider = ({
         await authService.logout();
 
         setAuth({});
+        localStorage.clear();
     };
 
     const contextValues = {

@@ -141,15 +141,11 @@ export const Details = () => {
                 </div>
 
                 {isOwner && (
-                    <div id="like-div">
-                        <span id="like-span"><input type="image" src="../images/like.jpg" id="garbage" alt="like" />: {music.likes?.length}</span>
-                    </div>
+                    <span id="like-span"><input type="image" src="../images/like.jpg" id="garbage" alt="like" />: {music.likes?.length}</span>
                 )}
 
                 {!isOwner && (
-                    <div id="like-div">
-                        <span id="like-span"><input onClick={onLike} type="image" src="../images/like.jpg" id="garbage" alt="like" />: {music.likes?.length}</span>
-                    </div>
+                    <span id="like-span"><input onClick={onLike} type="image" src="../images/like.jpg" id="garbage" alt="like" />: {music.likes?.length}</span>
                 )}
 
                 {isOwner && (
@@ -159,11 +155,10 @@ export const Details = () => {
                         <Link onClick={() => onDelete(musicId)}>Delete</Link>
                     </div>
                 )}
+                {isAuthenticated && !isOwner && (
+                    <AddComment onCommentCreate={onCommentCreate} />
+                )}
             </div>
-
-            {isAuthenticated && !isOwner && (
-                <AddComment onCommentCreate={onCommentCreate} />
-            )}
         </section>
     );
 };
