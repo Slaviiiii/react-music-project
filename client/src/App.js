@@ -14,7 +14,7 @@ import { Edit } from "./components/Edit/Edit";
 import { Logout } from "./components/Logout/Logout";
 import { Profile } from "./components/Profile/Profile";
 import { NotFound } from "./components/NotFound/NotFound";
-import { RouteGuard } from "./components/common/RouteGuard";
+import { RouteGuard } from "./components/common/RouteGuard"; 
 
 function App() {
     return (
