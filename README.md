@@ -3,11 +3,11 @@
 My Web Application.
 
 ## Description
-This is a full stack web application, which users use to create an account, login with it and make their music ideas come true. Users can like other music if they are logged in. They can also read their own creations in order to edit and delete them.
-
+This is a full stack web application, which users use to create an account, login with it and make their music ideas come true. Users can like and comment on other music if they are logged in into their account. Owners can read their own creations in order to edit and delete them.
 
 - For Routes it uses react-router-dom.
-- A React hook form is used for the validation. 
+- Some Routes have RouteGuard wrapper.
+- React-hook-form is used for form validation. 
 
 ## Technologies
 The used Technologies are:
