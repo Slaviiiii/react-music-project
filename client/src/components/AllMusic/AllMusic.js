@@ -8,6 +8,7 @@ import { useForm } from "react-hook-form";
 export const AllMusic = () => {
     const { music } = useContext(MusicContext);
     const [allMusic, setAllMusic] = useState(music);
+    let isFiltered = false;
     const {
         register,
         handleSubmit,
@@ -17,11 +18,12 @@ export const AllMusic = () => {
         }
     })
 
-    const onSearchSubmit = async (data) => {
+    const onSearchSubmit = async (data) => {      
         if(data.search.length === 0) {
             setAllMusic(music);
         } else {
-            setAllMusic(allMusic.filter(x => x.name.toLowerCase().startsWith(data.search) === true))
+            setAllMusic(music.filter(x => x.name.toLowerCase().startsWith(data.search.toLowerCase()) === true));
+            isFiltered = true;
         }
     };
 
@@ -44,7 +46,10 @@ export const AllMusic = () => {
             )}
 
             {allMusic.length === 0 && (
-                <h2>There are no creations on this page.</h2>
+                <div>
+                    <h2>There are no creations on this page.</h2>
+                    <img id='no-music' src="/images/no-music.png" alt="no music" />
+                </div>              
             )}
         </section>
     );
