@@ -1,0 +1,20 @@
+#NotFound-page {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
+
+#NotFound-page img {
+    width: 32.5%;
+    margin: 0 auto;
+}
+
+#NotFound-page p {
+    font-size: 24px;
+}
+
+#NotFound-page a {
+    font-size: 24px;
+    color: #1879e0;
+    text-decoration: none;
+}
