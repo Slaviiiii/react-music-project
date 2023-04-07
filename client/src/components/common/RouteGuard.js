@@ -13,6 +13,7 @@ export const RouteGuard = () => {
     return <Outlet />
 };
 
+//This is by preference.
 // export const RouteGuard = ({
 //     children
 // }) => {
