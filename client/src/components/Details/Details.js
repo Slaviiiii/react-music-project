@@ -144,9 +144,13 @@ export const Details = () => {
                     <span id="like-span"><input type="image" src="../images/like.jpg" id="garbage" alt="like" />: {music.likes?.length}</span>
                 )}
 
-                {!isOwner && (
+                {!isOwner && isAuthenticated && (
                     <span id="like-span"><input onClick={onLike} type="image" src="../images/like.jpg" id="garbage" alt="like" />: {music.likes?.length}</span>
                 )}
+
+                {!isAuthenticated && (
+                    <span id="like-span"><input type="image" src="../images/like.jpg" id="garbage" alt="like" />: {music.likes?.length}</span>
+                )}              
 
                 {isOwner && (
                     <div id="actions">
