@@ -8,7 +8,7 @@ This is a full stack web application, which users use to create an account, logi
 - For Routes, it uses react-router-dom.
 - Some Routes have RouteGuard wrapper.
 - React-hook-form is used for form validation. 
-- It gets provded with icons from ["Font awesome"]("https://fontawesome.com"). 
+- It gets provded with icons from [Font awesome](https://fontawesome.com). 
 
 ## Technologies
 The used Technologies are:
