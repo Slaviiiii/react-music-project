@@ -8,38 +8,36 @@ import { useForm } from "react-hook-form";
 
 export const Edit = () => {
     const { musicId } = useParams();
-    const [values, setValues] = useState({});
     const musicService = musicServiceFactory();
     const { onMusicEditSubmit } = useContext(MusicContext);
-
-    useEffect(() => {
-        musicService.getOne(musicId)
-            .then(result => {
-                setValues(result);
-            });
-    }, [musicId]);
 
     const {
         register,
         handleSubmit,
-        formState: { errors }
+        formState: { errors },
+        setValue,
     } = useForm({
         defaultValues: {
-            name: values.name,
-            imgUrl: values.imgUrl,
-            genre: values.genre,
-            artist: values.artist,
-            description: values.description,
+            name: "",
+            imgUrl: "",
+            genre: "",
+            artist: "",
+            description: "",
+            _id: "",
         }
     });
-    // const onChangeHandler = (e) => {
-    //     setValues(state => ({ ...state, [e.target.name]: e.target.value }));
-    // };
 
-    // const onSubmit = (e) => {
-    //     e.preventDefault();
-    //     onMusicEditSubmit(values);
-    // };
+    useEffect(() => {
+        musicService.getOne(musicId)
+            .then(result => {
+                setValue('name', result.name);
+                setValue('imgUrl', result.imgUrl);
+                setValue('genre', result.genre);
+                setValue('artist', result.artist);
+                setValue('description', result.description);
+                setValue('_id', result._id);
+            });
+    }, [musicId]);
 
     return (
         <section id="edit">

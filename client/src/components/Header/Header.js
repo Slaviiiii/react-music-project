@@ -11,25 +11,23 @@ export const Header = () => {
             {/* <!-- Navigation --> */}
             <Link to="/"><img id="logo-img" src="/images/logo.jpg" alt="Site logo" /></Link>
 
-            <nav>
-
-                <div>
-                    <Link to="/allMusic">All Music</Link>
-                </div>
-
+            <nav>   
                 {isAuthenticated && (
                     <div className="user">
-                        <span id="welcome">Welcome {userEmail}!</span>
-                        <Link to="/create">Create Music</Link>
-                        <Link to="/logout">Logout</Link>
+                        <Link to="/profile"><i className="fa-solid fa-user-plus"></i> {userEmail}</Link>
+                        <Link to="/allMusic"><i className="fa-sharp fa-solid fa-music"></i> All Music</Link>
+                        <Link to="/create"><i className="fa-sharp fa-solid fa-circle-plus"></i> Create Music</Link>
+                        <Link to="/logout"><i className="fa-sharp fa-solid fa-right-from-bracket"></i> Logout</Link>
                     </div>
                 )}
 
 
                 {!isAuthenticated && (
                     <div className="guest">
-                        <Link to="/login">Login</Link>
-                        <Link to="/register">Register</Link>
+                        <Link><i className="fa-sharp fa-solid fa-user-xmark"></i> No user</Link>
+                        <Link to="/allMusic"><i className="fa-sharp fa-solid fa-music"></i> All Music</Link>
+                        <Link to="/login"><i className="fa-solid fa-right-to-bracket"></i> Login</Link>
+                        <Link to="/register"><i className="fa-sharp fa-solid fa-registered"></i> Register</Link>
                     </div>
                 )}
             </nav>

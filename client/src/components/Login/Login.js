@@ -22,8 +22,7 @@ export const Login = () => {
         <section id="login" >
             <div className="form">
                 <h2>Login</h2>
-                <form className="login-form" method="POST" onSubmit={handleSubmit(onLoginSubmit)}>
-                    <p id="error-p">{errors.loginError?.message}</p>
+                <form className="login-form" method="POST" onSubmit={handleSubmit(onLoginSubmit)} >
                     <input type="text"
                         {...register("email", {
                             required: "This field is required!",
@@ -46,7 +45,7 @@ export const Login = () => {
                     <p>{errors.password?.message}</p>
                     <button type="submit">Login</button>
                     <p className="message">
-                        <span>Dont have an account? <Link to={"/register"}>Create one!</Link></span>
+                        <span>Dont have an account? <Link to={"/register"}>Create One <i className="fa-solid fa-plus"></i></Link></span>
                     </p>
                 </form>
             </div>
