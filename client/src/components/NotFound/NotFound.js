@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export const NotFound = () => {
     return (
-        <div>
+        <div id="NotFound-page">
             <img src="/images/404.png" alt="404" />
             
             <p>We couldn't find the page you were trying to visit.</p>
