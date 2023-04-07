@@ -12,6 +12,8 @@ import { Register } from "./components/Register/Register";
 import { Details } from "./components/Details/Details";
 import { Edit } from "./components/Edit/Edit";
 import { Logout } from "./components/Logout/Logout";
+import { Profile } from "./components/Profile/Profile";
+import { NotFound } from "./components/NotFound/NotFound";
 import { RouteGuard } from "./components/common/RouteGuard";
 
 function App() {
@@ -39,6 +41,12 @@ function App() {
                             <Route element={<RouteGuard />}>
                                 <Route path="/edit/:musicId" element={<Edit />} />
                             </Route>
+
+                            <Route element={<RouteGuard />}>
+                                <Route path="/profile" element={<Profile />} />
+                            </Route>
+
+                            <Route path="*" element={<NotFound />}/>
                         </Routes>
                     </main>
                     <Footer />
