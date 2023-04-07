@@ -45,7 +45,10 @@ const request = async (method, url, data) => {
 
         return result;
     } catch (error) {
-        return error.message;
+        if(error.message !== 'Resource not found') {
+            window.alert(error.message);    
+        }
+            return error.message;   
     }
 }
 
