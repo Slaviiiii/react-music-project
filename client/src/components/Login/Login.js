@@ -22,8 +22,7 @@ export const Login = () => {
         <section id="login" >
             <div className="form">
                 <h2>Login</h2>
-                <form className="login-form" method="POST" onSubmit={handleSubmit(onLoginSubmit)}>
-                    <p id="error-p">{errors.loginError?.message}</p>
+                <form className="login-form" method="POST" onSubmit={handleSubmit(onLoginSubmit)} >
                     <input type="text"
                         {...register("email", {
                             required: "This field is required!",
