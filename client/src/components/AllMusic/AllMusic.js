@@ -35,9 +35,8 @@ export const AllMusic = () => {
                  type="text"
                  placeholder="Search..."
                  maxLength="20" name="search" /> 
-                <button type="submit">Search</button> 
+                <button type="submit"><i className="fa-sharp fa-solid fa-magnifying-glass"></i> Search</button> 
             </form>
-
             <h2>All Created Music</h2>     
 
             {allMusic.map(x =>

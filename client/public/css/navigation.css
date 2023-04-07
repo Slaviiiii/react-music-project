@@ -1,3 +1,5 @@
+@import url('https://use.fontawesome.com/releases/v6.1.1/css/all.css');
+
 body {
   background: rgb(217, 217, 217);
   margin: 0;
@@ -21,11 +23,6 @@ nav {
   justify-content: space-between;
 }
 
-#welcome {
-  color: black;
-  text-decoration: underline;
-}
-
 #logo-img {
   height: 86px;
 }
@@ -33,7 +30,7 @@ nav {
 nav a {
   font-size: 1.5rem;
   color: #0a0a0a;
-  font-weight: 400;
+  font-weight: 550;
   font-size: 30px;
   margin-left: 15px;
 }
@@ -41,8 +38,5 @@ nav a {
 header a {
   padding: 0 10px;
   text-decoration: none;
-}
-
-section {
-  margin-bottom: 100px;
+  font-size: 35px;
 }
