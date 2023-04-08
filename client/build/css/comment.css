@@ -1,0 +1,45 @@
+.no-comment {
+    font-size: 22px;
+}
+
+.comment p {
+    font-size: 20px;
+    padding: 10px;
+}
+
+#pencil {
+    width: 25px;
+}
+
+#pencil:hover {
+    background-color: rgb(90, 143, 240);
+}
+
+#garbage {
+    margin-top: 0px;
+    width: 40px;
+    cursor: pointer;
+}
+
+.comment {
+    border-radius: 20px;
+    border-style: solid;
+    background-color: #7cade2;
+    border-color: #0056b3;
+    margin-top: 17px;
+    margin-right: 60px;
+    margin-left: 60px;
+}
+
+#add-comment {
+    background-color: #2890ff;
+    color: white;
+}
+
+#add-comment:hover {
+    background-color: #0056b3;
+}
+
+#add-span {
+    margin-right: 360px;
+}

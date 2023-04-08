@@ -1,0 +1,157 @@
+ #details-wrapper {
+   color: rgb(7, 6, 6);
+   background-color: #ebebeb;
+   margin: 50px auto;
+   min-height: 300px;
+   width: 50%;
+   border: 2px ridge rgb(210, 208, 208);
+   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2), 0 3px 3px 0 rgba(0, 0, 0, 0.24);
+ }
+
+ #details-name {
+   text-align: center;
+   font-weight: bold;
+   font-size: 29px;
+   margin-top: 20px;
+ }
+
+ #details-name span {
+   font-size: 26px;
+ }
+
+ #details-artist {
+   text-align: center;
+   font-weight: bold;
+   font-size: 26px;
+   margin-top: 20px;
+ }
+
+ #details-artist span {
+   font-size: 26px;
+ }
+
+ #details-genre {
+   text-align: center;
+   font-weight: bold;
+   font-size: 26px;
+ }
+
+ #details-genre span {
+   font-size: 26px;
+ }
+
+ #info-wrapper {
+   margin-top: 80px;
+ }
+
+ #details-description {
+   font-size: 24px;
+   width: 45%;
+   margin: 30px auto;
+   height: auto;
+   text-align: center;
+ }
+
+ #content {
+   margin-top: 137px;
+ }
+
+ #details-description textarea {
+   font-size: 17px;
+ }
+
+ h4 {
+   text-align: center;
+ }
+
+ .delete-message {
+   text-align: center;
+   font-size: 24px;
+ }
+
+ span {
+   font-size: 17px;
+ }
+
+ #actions {
+   display: flex;
+   justify-content: center;
+   margin-bottom: 25px;
+   margin-left: 500px;
+   margin-top: 40px;
+ }
+
+ #actions a {
+   text-decoration: none;
+   margin: auto 20px;
+   font-size: 21px;
+   width: 130px;
+   padding: 10px;
+   text-align: center;
+   color: white;
+   background: #2890ff;
+ }
+
+ #details-img {
+   position: relative;
+   float: left;
+   margin-left: 15px;
+   margin-right: 22px;
+   height: 220px;
+   box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.5);
+ }
+
+ .back-div a {
+   margin-left: 750px;
+   float: right;
+   background: #2890ff;
+   color: white;
+   padding-bottom: 7px;
+   padding-top: 7px;
+   text-decoration: none;
+   font-size: 21px;
+   width: 100px;
+   margin-right: 25px;
+   text-align: center;
+   margin-bottom: 20px;
+ }
+
+ .back-div {
+   margin-top: 24px;
+ }
+
+ #actions a:hover {
+   background-color: #0056b3;
+ }
+
+ .back-div a:hover {
+   background-color: #0056b3;
+ }
+
+ .details-comments h2 {
+   text-align: left;
+   margin-left: 20px;
+   margin-top: 0px;
+   margin-right: 0px;
+   margin-bottom: 0px;
+   padding-right: 0%;
+ }
+
+ /* #pencil {
+   margin-left: 200px;
+   margin-right: 20px;
+   width: 25px;
+ } */
+
+ #garbage {
+   margin-left: 100px;
+   margin-top: 0px;
+   width: 10px;
+ }
+
+ #like-span {
+   margin-top: 20px;
+   margin-left: 450px;
+   font-size: 30px;
+   cursor: pointer;
+ }

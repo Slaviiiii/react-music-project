@@ -1,6 +1,6 @@
 import { requestFactory } from "./requester";
 
-const baseUrl = "https://react-music-project-service-1.onrender.com/data/comments";
+const baseUrl = "https://react-music-project-service.onrender.com/data/comments";
 
 export const commentServiceFactory = () => {
     const request = requestFactory();

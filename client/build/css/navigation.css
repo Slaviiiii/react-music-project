@@ -1,0 +1,42 @@
+@import url('https://use.fontawesome.com/releases/v6.1.1/css/all.css');
+
+body {
+  background: rgb(217, 217, 217);
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.3em 3em;
+  background: rgb(255, 255, 255);
+}
+
+nav {
+  background-color: #dddddd;
+  height: 0px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#logo-img {
+  height: 95px;
+}
+
+nav a {
+  font-size: 1.5rem;
+  color: #0a0a0a;
+  font-weight: 500;
+  font-size: 30px;
+  margin-left: 15px;
+}
+
+header a {
+  padding: 0 10px;
+  text-decoration: none;
+  font-size: 35px;
+}
