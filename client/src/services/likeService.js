@@ -1,6 +1,6 @@
 import { requestFactory } from "./requester";
 
-const baseUrl = 'https://react-music-project-service-1.onrender.com/data/likes';
+const baseUrl = 'https://react-music-project-service.onrender.com/data/likes';
 
 export const likeServiceFactory = () => {
     const request = requestFactory();
