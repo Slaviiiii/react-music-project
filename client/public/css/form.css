@@ -13,6 +13,7 @@
 
 .form a {
   width: fit-content;
+  text-decoration: none;
   margin-left: 420px;
   background: #2890ff;
   color: white;
