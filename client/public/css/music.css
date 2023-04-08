@@ -10,9 +10,7 @@
     margin-left: 600px;
     border: 30px;
     margin-bottom: 30px;
-    /* &:hover {
-      transform: translateY(-5px);
-    } */
+    cursor: pointer;
 }
 
 .music-item:hover {

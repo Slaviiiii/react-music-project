@@ -13,6 +13,7 @@
     width: 15%;
     margin: 1px;
     margin-bottom: 20px;
+    margin-left: 0rem;
 }
 
 #search button[type="submit"] {
