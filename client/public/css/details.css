@@ -128,9 +128,13 @@
    background-color: #0056b3;
  }
 
-
  .details-comments h2 {
-   margin-right: 715px;
+   text-align: left;
+   margin-left: 20px;
+   margin-top: 0px;
+   margin-right: 0px;
+   margin-bottom: 0px;
+   padding-right: 0%;
  }
 
  /* #pencil {
@@ -147,10 +151,7 @@
 
  #like-span {
    margin-top: 20px;
-   margin-right: 700px;
+   margin-left: 450px;
    font-size: 30px;
- }
-
- #like-span i {
    cursor: pointer;
  }

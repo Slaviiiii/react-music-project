@@ -16,7 +16,7 @@ export const Details = () => {
     const { userId, isAuthenticated, userEmail } = useContext(AuthContext);
     const [music, setMusic] = useState({});
     const { musicId } = useParams();
-    const { onDelete } = useContext(MusicContext);
+    const { onDelete } = useContext(MusicContext);  
     // const isEddited = false; Todo: edit.
 
     const likeService = likeServiceFactory();
@@ -99,6 +99,7 @@ export const Details = () => {
     // };
 
     const isOwner = userId === music._ownerId;
+    
     return (
         <section id="details">
             <div id="details-wrapper">
@@ -119,7 +120,14 @@ export const Details = () => {
 
                     <p id="details-genre">
                         Genre: <span id="genre">{music.genre}</span>
-                    </p>
+                    </p> 
+                </div>
+
+                <div>
+                    <div id="details-description">
+                        <h4>Description:</h4>
+                        <textarea defaultValue={music.description} id="description" name="description" rows="3" cols="50" maxLength="110" disabled />
+                    </div>
                 </div>
 
                 {isOwner && (
@@ -137,13 +145,6 @@ export const Details = () => {
                 {!isAuthenticated && (
                     <span id="like-span"><i className="fa-solid fa-thumbs-up"></i>: {music.likes?.length}</span>
                 )}     
-
-                <div>
-                    <div id="details-description">
-                        <h4>Description:</h4>
-                        <textarea defaultValue={music.description} id="description" name="description" rows="3" cols="50" maxLength="110" disabled />
-                    </div>
-                </div>
 
                 <div className="details-comments">
                     <h2>Comments:</h2>
