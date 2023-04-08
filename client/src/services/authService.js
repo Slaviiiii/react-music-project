@@ -1,6 +1,6 @@
 import { requestFactory } from "./requester";
 
-const baseurl = 'http://localhost:3030/users';
+const baseurl = 'https://react-music-project-service-1.onrender.com/users';
 
 export const authServiceFactory = () => {
     const request = requestFactory();
