@@ -1,6 +1,6 @@
 
 # react-music-project
-## Deployed app link: https://compassfire-games-570be.web.app
+Deployed app link: https://compassfire-games-570be.web.app
 
 ## Description
 This is a full stack web application, which users use to create an account, login with it and make their music ideas come true. Users can like and comment on other music if they are logged in into their account. Owners can read their own creations in order to edit and delete them.
