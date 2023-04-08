@@ -1,17 +1,31 @@
-import { useForm } from "../../../hooks/useForm";
+import { useForm } from "react-hook-form";
 
 export const AddComment = ({
     onCommentCreate
 }) => {
-    const { values, changeHandler, onSubmit } = useForm({
-        comment: '',
-    }, onCommentCreate);
+    const {
+        register,
+        handleSubmit,
+        reset,
+        formState: {errors},
+    } = useForm({
+        defaultValues: {
+            comment: "",
+        }
+    })
 
     return (
         <div>
-            <form className="form" onSubmit={onSubmit}>
-                <label>Add a comment:</label>
-                <textarea name="comment" rows="3" maxLength="110" value={values.comment} onChange={changeHandler} placeholder="Comment" />
+            <form className="form" onSubmit={handleSubmit(onCommentCreate)}>
+                <span id="add-span">Add comment</span>
+                <textarea
+                    {...register("comment", {
+                        required: "This field is required!", 
+                    })}
+                    rows="3"
+                    maxLength="110"
+                    placeholder="Comment" 
+                />
                 <button id="add-comment" type="submit">Add Comment</button>
             </form>
         </div>

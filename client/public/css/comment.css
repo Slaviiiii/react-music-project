@@ -16,19 +16,19 @@
 }
 
 #garbage {
-    width: 50px;
-}
-
-#garbage:hover {
-    background-color: rgb(90, 143, 240);
+    margin-top: 0px;
+    width: 40px;
+    cursor: pointer;
 }
 
 .comment {
-    border-radius: 10px;
+    border-radius: 20px;
     border-style: solid;
     background-color: #7cade2;
     border-color: #0056b3;
     margin-top: 17px;
+    margin-right: 60px;
+    margin-left: 60px;
 }
 
 #add-comment {
@@ -38,4 +38,8 @@
 
 #add-comment:hover {
     background-color: #0056b3;
+}
+
+#add-span {
+    margin-right: 360px;
 }

@@ -1,34 +1,62 @@
  #all-music {
-   margin-top: 50px;
-   display: flex;
-   flex-direction: column;
-   text-align: center;
+     margin-top: 50px;
+     display: flex;
+     flex-direction: column;
+     text-align: center;
  }
 
  h2 {
-   color: black;
-   text-align: center;
-   margin-top: 40px;
-   font-size: 36px;
+     color: black;
+     text-align: center;
+     margin-top: 28px;
+     font-size: 36px;
  }
 
 
  .music img {
-   margin-right: 50px;
-   height: 170px;
-   width: 170px;
+     margin-right: 50px;
+     height: 170px;
+     width: 170px;
  }
 
  .details-btn {
-   text-decoration: none;
-   margin: auto 50px;
-   font-size: 21px;
-   width: 130px;
-   padding: 10px;
-   text-align: center;
+     text-decoration: none;
+     margin: auto 50px;
+     font-size: 21px;
+     width: 130px;
+     padding: 10px;
+     text-align: center;
  }
 
  #no-music {
-   width: 40%;
-   margin: 0 auto;
+     width: 40%;
+     margin-right: 40px;
+     margin-top: 10px;
+ }
+
+ #be-first {
+     color: #2890ff;
+     text-decoration: none;
+     font-size: 30px;
+ }
+
+ #be-first:hover {
+     color: #0056b3;
+     transform: translateY(-5px);
+ }
+
+ #white-layer {
+     color: rgb(255, 255, 255);
+ }
+
+ #first-half {
+     font-size: 37px;
+     color: rgb(255, 255, 255);
+     margin-left: 15px;
+ }
+
+ #second-half {
+     font-size: 37px;
+     color: black;
+     margin-right: 15px;
  }

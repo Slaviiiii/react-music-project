@@ -129,7 +129,12 @@
  }
 
  .details-comments h2 {
-   margin-right: 715px;
+   text-align: left;
+   margin-left: 20px;
+   margin-top: 0px;
+   margin-right: 0px;
+   margin-bottom: 0px;
+   padding-right: 0%;
  }
 
  /* #pencil {
@@ -139,24 +144,14 @@
  } */
 
  #garbage {
-   margin-left: 200px;
-   width: 20px;
+   margin-left: 100px;
+   margin-top: 0px;
+   width: 10px;
  }
 
  #like-span {
-   margin-left: 200px;
+   margin-top: 20px;
+   margin-left: 450px;
    font-size: 30px;
- }
-
- #comment-form button {
-   text-transform: uppercase;
-   background: #2890ff;
-   width: 100%;
-   border: 0;
-   padding: 15px;
-   color: #ffffff;
-   font-size: 14px;
-   -webkit-transition: all 0.3 ease;
-   transition: all 0.3 ease;
    cursor: pointer;
  }
