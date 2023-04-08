@@ -13,7 +13,7 @@
 .form a {
   width: fit-content;
   margin-left: 420px;
-  background: #0056b3;
+  background: #2890ff;
   color: white;
   padding-bottom: 7px;
   padding-top: 7px;
@@ -105,5 +105,9 @@
 }
 
 .form .message a:hover {
+  background-color: #0056b3;
+}
+
+.form a:hover {
   background-color: #0056b3;
 }

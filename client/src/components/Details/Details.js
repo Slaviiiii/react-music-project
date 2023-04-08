@@ -120,7 +120,7 @@ export const Details = () => {
                 </div>
 
 
-                <div id="info-wrapper">
+                <div>
                     <div id="details-description">
                         <h4>Description:</h4>
                         <textarea defaultValue={music.description} id="description" name="description" rows="3" cols="50" maxLength="110" disabled />
@@ -155,8 +155,8 @@ export const Details = () => {
                 {isOwner && (
                     <div id="actions">
                         <span></span>
-                        <Link to={`/edit/${musicId}`} id="edit-btn">Edit</Link>
-                        <Link onClick={() => onDelete(musicId)}>Delete</Link>
+                        <Link to={`/edit/${musicId}`} id="edit-btn"><i className="fa-solid fa-pen-to-square"></i> Edit</Link>
+                        <Link onClick={() => onDelete(musicId)}><i class="fa-solid fa-delete-left"></i> Delete</Link>
                     </div>
                 )}
                 {isAuthenticated && !isOwner && (
