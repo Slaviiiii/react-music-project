@@ -27,7 +27,7 @@ export const Login = () => {
                         {...register("email", {
                             required: "This field is required!",
                             pattern: {
-                                // value: /^[a-zA-z]{3,}+@[[a-zA-z]+\.[a-zA-z]+$/,
+                                value: /^[a-zA-z0-9]+@[[a-zA-z]+\.[a-zA-z]+$/,
                                 message: "Your email is incorrect!"
                             }
                         })}
