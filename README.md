@@ -11,12 +11,12 @@ This is a full stack web application, which users use to create an account, logi
 - For Icons, it gets provided from [Font awesome](https://fontawesome.com). 
 
 ## Technologies
-The used Technologies are:
-    1. Javascript - ![javascript](https://img.icons8.com/color/100/000000/javascript--v1.png)
-    2. Html - ![html](https://img.icons8.com/color/100/000000/html-5--v1.png)
-    3. Css - ![css](https://img.icons8.com/color/100/000000/css3.png)
-    4. React - ![react](https://img.icons8.com/office/100/000000/react.png)
-    5. Node.js
+The used Technologies are:  
+    ![javascript](https://img.icons8.com/color/100/000000/javascript--v1.png)
+    ![html](https://img.icons8.com/color/100/000000/html-5--v1.png)
+    ![css](https://img.icons8.com/color/100/000000/css3.png)
+    ![react](https://img.icons8.com/office/100/000000/react.png)
+
 ## Pages
      
     1. Home page 
