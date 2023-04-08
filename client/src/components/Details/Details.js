@@ -10,6 +10,7 @@ import { AuthContext } from "../../contexts/AuthContext";
 
 import { Comment } from "./Comment/Comment";
 import { AddComment } from "./AddComment/AddComment";
+let isLiked = false;
 
 export const Details = () => {
     const { userId, isAuthenticated, userEmail } = useContext(AuthContext);
@@ -62,6 +63,7 @@ export const Details = () => {
         e.preventDefault();
 
         if (music.likes.length === 0) {
+            isLiked = true;
             const result = await likeService.addLike({ username: userEmail, musicId });
             setMusic(state => ({
                 ...state,
@@ -71,18 +73,20 @@ export const Details = () => {
             const allLikes = music.likes.filter(l => l.username === userEmail);
 
             if (allLikes.length < 1) {
+                isLiked = true;
                 const result = await likeService.addLike({ username: userEmail, musicId });
                 setMusic(state => ({
                     ...state,
                     likes: [...state.likes, result]
                 }));
             } else if (allLikes.length === 1) {
+                isLiked = false;
                 await likeService.removeLike(allLikes[0]._id);
                 setMusic(state => ({
                     ...state,
                     likes: [...state.likes.filter(l => l._id !== allLikes[0]._id)]
                 }));
-            }
+            }         
         }
     };
 
@@ -95,7 +99,6 @@ export const Details = () => {
     // };
 
     const isOwner = userId === music._ownerId;
-
     return (
         <section id="details">
             <div id="details-wrapper">
@@ -119,6 +122,21 @@ export const Details = () => {
                     </p>
                 </div>
 
+                {isOwner && (
+                    <span id="like-span"><i className="fa-solid fa-thumbs-up"></i>: {music.likes?.length}</span>
+                )}
+
+                {!isOwner && isAuthenticated && isLiked === true && (
+                    <span id="like-span"><i onClick={onLike} className="fa-solid fa-thumbs-up"></i>: {music.likes?.length}</span>
+                )}
+
+                {!isOwner && isAuthenticated && isLiked === false && (
+                    <span id="like-span"><i onClick={onLike} className="fa-regular fa-thumbs-up"></i>: {music.likes?.length}</span>
+                )}
+
+                {!isAuthenticated && (
+                    <span id="like-span"><i className="fa-solid fa-thumbs-up"></i>: {music.likes?.length}</span>
+                )}     
 
                 <div>
                     <div id="details-description">
@@ -138,25 +156,13 @@ export const Details = () => {
                             <p className="no-comment">No created comments yet.</p>
                         )}
                     </ul>
-                </div>
-
-                {isOwner && (
-                    <span id="like-span"><input type="image" src="../images/like.jpg" id="garbage" alt="like" />: {music.likes?.length}</span>
-                )}
-
-                {!isOwner && isAuthenticated && (
-                    <span id="like-span"><input onClick={onLike} type="image" src="../images/like.jpg" id="garbage" alt="like" />: {music.likes?.length}</span>
-                )}
-
-                {!isAuthenticated && (
-                    <span id="like-span"><input type="image" src="../images/like.jpg" id="garbage" alt="like" />: {music.likes?.length}</span>
-                )}              
+                </div>         
 
                 {isOwner && (
                     <div id="actions">
                         <span></span>
                         <Link to={`/edit/${musicId}`} id="edit-btn"><i className="fa-solid fa-pen-to-square"></i> Edit</Link>
-                        <Link onClick={() => onDelete(musicId)}><i class="fa-solid fa-delete-left"></i> Delete</Link>
+                        <Link onClick={() => onDelete(musicId)}><i className="fa-solid fa-delete-left"></i> Delete</Link>
                     </div>
                 )}
                 {isAuthenticated && !isOwner && (

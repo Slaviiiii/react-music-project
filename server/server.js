@@ -1366,7 +1366,17 @@
 
         },
         allMusic: {
-
+            "2f342fd2-33d3-4127-857b-b271fb046854": {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "name": "Music name",
+                "imgUrl": "https://daily.jstor.org/wp-content/uploads/2023/01/good_times_with_bad_music_1050x700.jpg",
+                "genre": "phonk",
+                "artist": "Alan Walker",
+                "description": "The best song.",
+                "_createdOn": 1680946554000,
+                "_id": "2f342fd2-33d3-4127-857b-b271fb046854"
+            },
+            
         }
     };
     var rules$1 = {
