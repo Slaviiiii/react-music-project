@@ -105,7 +105,7 @@ export const Edit = () => {
                     })} id="description" placeholder="Description" maxLength="140" rows="3" cols="50"></input>
                     <p>{errors.description?.message}</p>
 
-                    <button type="submit">send</button>
+                    <button type="submit">edit</button>
                 </form>
             </div>
         </section>
