@@ -1,7 +1,7 @@
  #all-music {
      margin-top: 50px;
      display: flex;
-     flex-direction: row;
+     flex-direction: column;
      text-align: center;
  }
 
