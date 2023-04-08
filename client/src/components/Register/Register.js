@@ -9,7 +9,8 @@ export const Register = () => {
     const {
         register,
         handleSubmit,
-        formState: { errors }
+        formState: { errors },
+        getValues
     } = useForm({
         defaultValues: {
             email: "",
@@ -61,8 +62,12 @@ export const Register = () => {
                             maxLength: {
                                 value: 18,
                                 message: "Max length is 18."
-                            }
-                        })}
+                            },
+                            validate: (value) => { 
+                                const { password } = getValues(); 
+                                return password === value || "Passwords must match!"; 
+                            },
+                            })}
                         type="password"
                         name="re-password"
                         id="repeat-password"
