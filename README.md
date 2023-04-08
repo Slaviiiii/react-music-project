@@ -22,7 +22,7 @@ The used Technologies are:
     1. Home page 
 
 
-![image](https://user-images.githubusercontent.com/106228555/230668795-90b15093-20a9-4a64-88cb-60f127000b1d.png)
+![image](https://user-images.githubusercontent.com/106228555/230734212-a4c70456-4711-4469-968e-237da7d8f8f5.png)
 
 
     2. Catalog page without music
@@ -34,7 +34,7 @@ The used Technologies are:
     3. Catalog page with music
 
 
-![image](https://user-images.githubusercontent.com/106228555/230668968-b602ccf0-09a3-4780-a69c-0d45af05f4b6.png)
+![image](https://user-images.githubusercontent.com/106228555/230735120-46ca6755-25fd-4c95-af81-af70c1e6a2e8.png)
 
 
 ## Get Started with
