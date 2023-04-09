@@ -1,7 +1,8 @@
 import { useForm } from "react-hook-form";
 
 export const AddComment = ({
-    onCommentCreate
+    commentService,
+    setMusic
 }) => {
     const {
         register,
@@ -16,9 +17,14 @@ export const AddComment = ({
         }
     })
 
-    
-    const clearComment = (e) => {
-        e.preventDefault();
+    const onCommentCreate = async (values) => {
+        const result = await commentService.create(musicId, values.comment, userEmail);
+
+        setMusic(state => ({
+            ...state,
+            comments: [...state.comments, result]
+        }));
+
         setValue("comment", "");
     };
 
@@ -34,7 +40,7 @@ export const AddComment = ({
                     maxLength="110"
                     placeholder="Comment" 
                 />
-                <button id="add-comment" onClick={clearComment} type="submit">Add Comment</button>
+                <button id="add-comment" type="submit">Add Comment</button>
             </form>
         </div>
     );

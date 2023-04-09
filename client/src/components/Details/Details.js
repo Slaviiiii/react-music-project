@@ -10,6 +10,7 @@ import { AuthContext } from "../../contexts/AuthContext";
 
 import { Comment } from "./Comment/Comment";
 import { AddComment } from "./AddComment/AddComment";
+
 let isLiked = false;
 
 export const Details = () => {
@@ -35,15 +36,6 @@ export const Details = () => {
             });
         });
     }, [musicId]);
-
-    const onCommentCreate = async (values) => {
-        const result = await commentService.create(musicId, values.comment, userEmail);
-
-        setMusic(state => ({
-            ...state,
-            comments: [...state.comments, result]
-        }));
-    };
 
     const onCommentDelete = async (commentId) => {
         const result = window.confirm("Are you sure you want to delete this comment?");
@@ -158,7 +150,7 @@ export const Details = () => {
                     </div>
                 )}
                 {isAuthenticated && !isOwner && (
-                    <AddComment onCommentCreate={onCommentCreate} />
+                    <AddComment commentService={commentService} setMusic={setMusic} />
                 )}
             </div>
         </section>
