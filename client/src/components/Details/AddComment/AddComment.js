@@ -8,11 +8,19 @@ export const AddComment = ({
         handleSubmit,
         reset,
         formState: {errors},
+        getValues,
     } = useForm({
         defaultValues: {
             comment: "",
         }
     })
+
+    
+    const clearComment = (e) => {
+        e.preventDefault();
+        const { comment } = getValues();
+        comment = "";
+    };
 
     return (
         <div>
@@ -26,7 +34,7 @@ export const AddComment = ({
                     maxLength="110"
                     placeholder="Comment" 
                 />
-                <button id="add-comment" type="submit">Add Comment</button>
+                <button id="add-comment" onClick={clearComment} type="submit">Add Comment</button>
             </form>
         </div>
     );
