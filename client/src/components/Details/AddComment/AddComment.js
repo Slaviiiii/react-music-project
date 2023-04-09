@@ -2,14 +2,15 @@ import { useForm } from "react-hook-form";
 
 export const AddComment = ({
     commentService,
-    setMusic
+    setMusic,
+    musicId,
+    userEmail
 }) => {
     const {
         register,
         handleSubmit,
         reset,
         formState: {errors},
-        getValues,
         setValue,
     } = useForm({
         defaultValues: {

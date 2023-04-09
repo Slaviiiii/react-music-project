@@ -150,7 +150,7 @@ export const Details = () => {
                     </div>
                 )}
                 {isAuthenticated && !isOwner && (
-                    <AddComment commentService={commentService} setMusic={setMusic} />
+                    <AddComment commentService={commentService} setMusic={setMusic} musicId={musicId} userEmail={userEmail} />
                 )}
             </div>
         </section>
