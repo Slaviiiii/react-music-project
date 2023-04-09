@@ -9,7 +9,6 @@ export const AddComment = ({
     const {
         register,
         handleSubmit,
-        reset,
         formState: {errors},
         setValue,
     } = useForm({
@@ -41,6 +40,8 @@ export const AddComment = ({
                     maxLength="110"
                     placeholder="Comment" 
                 />
+                <p>{errors.comment?.message}</p>
+                
                 <button id="add-comment" type="submit">Add Comment</button>
             </form>
         </div>
