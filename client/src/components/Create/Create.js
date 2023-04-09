@@ -85,7 +85,7 @@ export const Create = () => {
                     })} id="description" placeholder="Description" maxLength="140" rows="3" cols="50"></input>
                     <p>{errors.description?.message}</p>
 
-                    <button type="submit">send</button>
+                    <button type="submit">create</button>
                 </form>
             </div>
         </section >

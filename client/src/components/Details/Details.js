@@ -17,7 +17,6 @@ export const Details = () => {
     const [music, setMusic] = useState({});
     const { musicId } = useParams();
     const { onDelete } = useContext(MusicContext);  
-    // const isEddited = false; Todo: edit.
 
     const likeService = likeServiceFactory();
     const musicService = musicServiceFactory();
@@ -89,14 +88,6 @@ export const Details = () => {
             }         
         }
     };
-
-    //Todo edit.
-    // const onCommentEdit = async (commentId, data) => {
-    //     const result = await commentService.edit(commentId, data);
-    //     isEddited = true;
-
-    //     return result;
-    // };
 
     const isOwner = userId === music._ownerId;
     

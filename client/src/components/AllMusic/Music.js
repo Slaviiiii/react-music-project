@@ -17,7 +17,7 @@ const Music = ({
                 <p>
                     <strong className="strong-artist">Artist: </strong><span className="music-artist">{artist}</span>
                 </p>
-                <Link to={`/details/${_id}`} className="details-btn">Details</Link>
+                <Link to={`/details/${_id}`} className="details-btn"><i className="fa-solid fa-circle-info"></i> Details</Link>
             </div>
         </div>
     );
