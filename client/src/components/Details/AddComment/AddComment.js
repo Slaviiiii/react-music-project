@@ -9,6 +9,7 @@ export const AddComment = ({
         reset,
         formState: {errors},
         getValues,
+        setValue,
     } = useForm({
         defaultValues: {
             comment: "",
@@ -18,8 +19,7 @@ export const AddComment = ({
     
     const clearComment = (e) => {
         e.preventDefault();
-        const { comment } = getValues();
-        comment = "";
+        setValue("comment", "");
     };
 
     return (
