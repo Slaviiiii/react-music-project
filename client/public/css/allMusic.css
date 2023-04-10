@@ -1,9 +1,11 @@
  #all-music {
      margin: 0 auto;
      margin-top: 50px;
+     margin-bottom: 4rem;
      display: flex;
      flex-direction: column;
      text-align: center;
+     align-items: center;
  }
 
  h2 {
@@ -59,4 +61,8 @@
      font-size: 37px;
      color: black;
      margin-right: 15px;
+ }
+
+ .all-music-wrapper {
+     justify-content: center;
  }
