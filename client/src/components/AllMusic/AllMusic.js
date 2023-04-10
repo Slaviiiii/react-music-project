@@ -95,9 +95,12 @@ export const AllMusic = () => {
                 </>    
             )}
 
-            {music.map(x =>
+            <div className="all-music-wrapper">
+                {music.map(x =>
                 <Music key={`${x._id}-${x.artist}-${x.name}`} {...x} />
-            )}
+                )}   
+            </div>
+            
 
             {music.length === 0 && (
                 <div>
