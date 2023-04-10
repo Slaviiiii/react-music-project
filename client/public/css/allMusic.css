@@ -1,4 +1,5 @@
  #all-music {
+     margin: 0 auto;
      margin-top: 50px;
      display: flex;
      flex-direction: column;
