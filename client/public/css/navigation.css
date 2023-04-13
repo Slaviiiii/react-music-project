@@ -12,7 +12,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0.3em 3em;
-  background: rgb(255, 255, 255);
+  background: rgb(22, 114, 199);
 }
 
 nav {
@@ -29,7 +29,7 @@ nav {
 
 nav a {
   font-size: 1.5rem;
-  color: #0a0a0a;
+  color: #dddbdb;
   font-weight: 500;
   font-size: 30px;
   margin-left: 15px;
