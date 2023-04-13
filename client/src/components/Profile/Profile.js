@@ -1,3 +1,4 @@
+import "./Profile.css";
 import { useContext } from "react";
 
 import Music from "../AllMusic/Music";

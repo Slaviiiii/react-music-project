@@ -1,3 +1,4 @@
+import "../Comment.css";
 
 export const Comment = ({
     username,
