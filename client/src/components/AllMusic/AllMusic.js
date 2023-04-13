@@ -80,7 +80,7 @@ export const AllMusic = () => {
                 <button type="submit"><i className="fa-sharp fa-solid fa-magnifying-glass"></i> Search</button> 
             </form>
             <h2>
-                <i className="fa-solid fa-layer-group"></i>
+                <i id="yellow-layer" className="fa-solid fa-layer-group"></i>
                 <span id="first-half">All </span>
                 <span id="second-half">Music</span>
                 <i id="white-layer" className="fa-sharp fa-solid fa-layer-group"></i>
