@@ -1,3 +1,4 @@
+import "./Create.css";
 import { useContext } from "react";
 
 import { MusicContext } from "../../contexts/MusicContext";
@@ -21,8 +22,10 @@ export const Create = () => {
     });
 
     return (
+
         <section id="create">
-            <div className="form">
+            <img src="/images/create-disc.png" alt="create-disc" />
+            <div className="form-create">
                 <h2>Create Music</h2>
                 <form className="create-form" method="POST" onSubmit={handleSubmit(onMusicCreateSubmit)}>
                     <input type="text" {...register("name", {
@@ -84,10 +87,10 @@ export const Create = () => {
                         }
                     })} id="description" placeholder="Description" maxLength="90" rows="3" cols="50"></input>
                     <p>{errors.description?.message}</p>
+                    
                     <button type="submit">create</button>
-                </form>
+                </form>          
             </div>
-            <img src="/images/create-disc.png" alt="create-disc" />
         </section >
     );
 };

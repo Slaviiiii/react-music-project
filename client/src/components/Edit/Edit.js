@@ -1,3 +1,4 @@
+import "./Edit.css";
 import { useParams, Link } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 
@@ -41,7 +42,8 @@ export const Edit = () => {
 
     return (
         <section id="edit">
-            <div className="form">
+            <img src="/images/create-disc.png" alt="create-disc" />
+            <div className="form-edit">
                 <Link to={`/details/${musicId}`}>Back</Link>
                 <h2>Edit Music</h2>
                 <form className="edit-form" method="PUT" onSubmit={handleSubmit(onMusicEditSubmit)}>
