@@ -8,22 +8,22 @@
 
 #search input[type="text"] {
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 10px;
     border: none;
-    font-size: 16px;
+    font-size: 19px;
     margin: 1px;
     margin-bottom: 20px;
-    margin-left: 0rem;
+    margin-left: 0%;
     margin-top: 0%;
-    margin-right: 1rem;
+    margin-right: 0.5rem;
 }
 
 #search button[type="submit"] {
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 10px;
     margin-bottom: 19px;
     border: none;
-    font-size: 16px;
+    font-size: 18px;
     background-color: #2890ff;
     color: white;
     cursor: pointer;
