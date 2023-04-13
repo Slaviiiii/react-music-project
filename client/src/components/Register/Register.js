@@ -79,7 +79,7 @@ export const Register = () => {
                     
                     <button type="submit">Register</button>
                     <p className="message">
-                        <span>Already have an account? <Link to={"/login"}>Log in now!</Link></span>
+                        <span><b>Already have an account?</b> <Link to={"/login"}><b>Log in now!</b></Link></span>
                     </p>
                 </form>
             </div>

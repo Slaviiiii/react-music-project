@@ -1,18 +1,18 @@
 .form-register {
     background-color: #ebebeb;
-    max-width: 460px;
-    margin: auto;
-    margin-top: 100px;
+    width: 27%;
+    height: 47vh;
     padding: 45px;
     text-align: center;
     border-radius: 30px;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    margin-top: 5rem;
+    margin-right: 8rem;
 }
 
 .form-register a {
     width: fit-content;
     text-decoration: none;
-    margin-left: 420px;
     background: #2890ff;
     color: white;
     padding-bottom: 7px;
@@ -110,4 +110,18 @@
 
 .form-register a:hover {
     background-color: #0056b3;
+}
+
+#register img {
+    width: 39%;
+    margin-top: -2rem;
+    margin-right: 5rem;
+}
+
+#register {
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    text-align: center;
+    margin: 0 auto;
 }
