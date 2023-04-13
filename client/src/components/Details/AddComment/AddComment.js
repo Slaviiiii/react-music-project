@@ -1,3 +1,4 @@
+import "../Comment.css";
 import { useForm } from "react-hook-form";
 
 export const AddComment = ({

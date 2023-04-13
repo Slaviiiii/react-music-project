@@ -1,3 +1,4 @@
+import "./AllMusic.css";
 import { useContext, useState, useEffect } from "react";
 
 import { Link } from "react-router-dom";

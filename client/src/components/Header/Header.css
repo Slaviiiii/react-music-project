@@ -1,7 +1,7 @@
 @import url('https://use.fontawesome.com/releases/v6.1.1/css/all.css');
 
 body {
-  background: rgb(217, 217, 217);
+  background-image: linear-gradient(to right, rgb(171, 127, 230), rgba(203, 221, 37, 0.74));
   margin: 0;
   padding: 0;
   overflow: auto;
@@ -12,7 +12,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0.3em 3em;
-  background: rgb(255, 255, 255);
+  background: rgb(23, 60, 95);
 }
 
 nav {
@@ -29,10 +29,14 @@ nav {
 
 nav a {
   font-size: 1.5rem;
-  color: #0a0a0a;
+  color: #dddbdb;
   font-weight: 500;
   font-size: 30px;
   margin-left: 15px;
+}
+
+nav a:hover {
+  color: #ada5a5;
 }
 
 header a {

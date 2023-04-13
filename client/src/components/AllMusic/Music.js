@@ -1,3 +1,4 @@
+import "./Music.css";
 import { Link } from "react-router-dom";
 import { memo } from "react";
 

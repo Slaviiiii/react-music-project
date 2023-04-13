@@ -1,8 +1,9 @@
+import "./Footer.css";
 
 export const Footer = () => {
     return (
         <footer>
-            <p>@Global Music</p>
+            <p>&copy; All rights reserved! @Global Music - from Slavi Karaslavov</p>
         </footer>
     );
 }
