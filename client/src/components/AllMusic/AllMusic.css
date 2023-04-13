@@ -47,19 +47,24 @@
      transform: translateY(-5px);
  }
 
- #white-layer {
-     color: rgb(255, 255, 255);
+ /* rgb(171, 127, 230), rgba(203, 221, 37, 0.74) */
+ i#white-layer {
+     color: rgb(171, 127, 230);
  }
 
- #first-half {
+ i#yellow-layer {
+     color: rgb(203, 221, 37, 0.74);
+ }
+
+ span#first-half {
      font-size: 37px;
-     color: rgb(255, 255, 255);
+     color: rgb(203, 221, 37, 0.74);
      margin-left: 15px;
  }
 
- #second-half {
+ span#second-half {
      font-size: 37px;
-     color: black;
+     color: rgb(171, 127, 230);
      margin-right: 15px;
  }
 
