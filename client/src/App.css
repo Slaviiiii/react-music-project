@@ -2,8 +2,8 @@
 
 .form {
     background-color: #ebebeb;
-    max-width: 460px;
-    margin: auto;
+    width: 450px;
+    margin: 0 auto;
     margin-top: 100px;
     padding: 45px;
     text-align: center;
@@ -112,4 +112,9 @@
 
 .form a:hover {
     background-color: #0056b3;
+}
+
+#create img {
+    width: 40%;
+    margin: 0px auto;
 }
