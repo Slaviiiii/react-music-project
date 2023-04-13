@@ -1,3 +1,4 @@
+import "./Register.css";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 
@@ -21,9 +22,10 @@ export const Register = () => {
 
     return (
         <section id="register">
-            <div className="form">
+            <img src="/images/register.png" alt="register now" />
+            <div className="form-register">
                 <h2>Register</h2>
-                <form className="login-form" method="POST" onSubmit={handleSubmit(onRegisterSubmit)}>
+                <form className="register-form" method="POST" onSubmit={handleSubmit(onRegisterSubmit)}>
                     <input type="text"
                         {...register("email", {
                             required: "This field is required!",

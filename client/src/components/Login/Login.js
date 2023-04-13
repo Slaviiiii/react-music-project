@@ -1,3 +1,4 @@
+import "./Login.css";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 
@@ -20,7 +21,8 @@ export const Login = () => {
 
     return (
         <section id="login" >
-            <div className="form">
+            <img src="/images/login.png" alt="login now" />
+            <div className="form-login">
                 <h2>Login</h2>
                 <form className="login-form" method="POST" onSubmit={handleSubmit(onLoginSubmit)} >
                     <input type="text"

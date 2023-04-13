@@ -116,7 +116,7 @@ export const Details = () => {
                 </div>
 
                 {isOwner && (
-                    <span id="like-span"><i className="fa-solid fa-thumbs-up"></i>: {music.likes?.length} have liked</span>
+                    <span id="like-span"><i className="fa-solid fa-thumbs-up"></i>: {music.likes?.length} people have liked</span>
                 )}
 
                 {!isOwner && isAuthenticated && isLiked === true && (

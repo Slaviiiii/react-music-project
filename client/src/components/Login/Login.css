@@ -1,0 +1,117 @@
+.form-login {
+    background-color: #ebebeb;
+    padding: 45px;
+    width: 27%;
+    text-align: center;
+    border-radius: 30px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    margin-top: 7rem;
+    margin-right: 15rem;
+}
+
+.form-login a {
+    width: fit-content;
+    text-decoration: none;
+    margin-left: 420px;
+    background: #2890ff;
+    color: white;
+    padding-bottom: 7px;
+    padding-top: 7px;
+    padding-left: 13px;
+    padding-right: 13px;
+}
+
+.form-login h2 {
+    margin-bottom: 50px;
+    font-size: 30px;
+}
+
+.form-login input {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #d1cccc;
+    width: 100%;
+    height: 50px;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.form-login button {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #2890ff;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #ffffff;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+}
+
+.form-login button:hover,
+.form-login button:active,
+.form-login button:focus {
+    background: #0056b3;
+}
+
+.form-login .login-form {
+    display: block;
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.container:before,
+.container:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.form-login .message {
+    padding-top: 10px;
+    margin-bottom: 0px;
+    color: #000000;
+    font-size: 17px;
+}
+
+.form-login .message a {
+    margin-left: 20px;
+    color: white;
+    background-color: #5c9596;
+    text-decoration: none;
+    text-align: center;
+    background-color: #2890ff;
+}
+
+.form-login .message a:hover {
+    background-color: #0056b3;
+}
+
+.form-login a:hover {
+    background-color: #0056b3;
+}
+
+#login img {
+    width: 39%;
+    margin-top: 5rem;
+    margin-right: 3rem;
+}
+
+#login {
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    text-align: center;
+    margin: 0 auto;
+}
