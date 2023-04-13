@@ -79,15 +79,15 @@ export const Create = () => {
                             value: 3,
                             message: "Min length is 3."
                         }, maxLength: {
-                            value: 140,
-                            message: "Max length is 140."
+                            value: 90,
+                            message: "Max length is 90."
                         }
-                    })} id="description" placeholder="Description" maxLength="140" rows="3" cols="50"></input>
+                    })} id="description" placeholder="Description" maxLength="90" rows="3" cols="50"></input>
                     <p>{errors.description?.message}</p>
-
                     <button type="submit">create</button>
                 </form>
             </div>
+            <img src="/images/create-disc.png" alt="create-disc" />
         </section >
     );
 };

@@ -1,4 +1,5 @@
 import "./Details.css";
+import "./Comment.css";
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState, useContext } from "react";
 
