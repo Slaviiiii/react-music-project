@@ -116,7 +116,7 @@ export const Details = () => {
                 </div>
 
                 {isOwner && (
-                    <span id="like-span"><i className="fa-solid fa-thumbs-up"></i>: {music.likes?.length}</span>
+                    <span id="like-span"><i className="fa-solid fa-thumbs-up"></i>: {music.likes?.length} have liked</span>
                 )}
 
                 {!isOwner && isAuthenticated && isLiked === true && (
@@ -127,9 +127,13 @@ export const Details = () => {
                     <span id="like-span"><i onClick={onLike} className="fa-regular fa-thumbs-up"></i>: {music.likes?.length}</span>
                 )}
 
-                {!isAuthenticated && (
-                    <span id="like-span"><i className="fa-solid fa-thumbs-up"></i>: {music.likes?.length}</span>
+                {!isAuthenticated && music.likes?.length === 1 && (
+                    <span id="like-span"><i className="fa-solid fa-thumbs-up"></i>: {music.likes?.length} person has liked</span>
                 )}     
+
+                {!isAuthenticated && (
+                    <span id="like-span"><i className="fa-solid fa-thumbs-up"></i>: {music.likes?.length} people have liked</span>
+                )}  
 
                 <div className="details-comments">
                     <h2>Comments:</h2>

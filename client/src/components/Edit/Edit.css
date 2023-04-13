@@ -1,6 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:300);
-
-.form-create {
+.form-edit {
     background-color: #ebebeb;
     width: 30%;
     height: 60vh;
@@ -11,8 +9,9 @@
     margin-top: 5rem;
 }
 
-.form a {
+.form-edit a {
     width: fit-content;
+    float: right;
     text-decoration: none;
     background: #2890ff;
     color: white;
@@ -22,12 +21,13 @@
     padding-right: 13px;
 }
 
-.form h2 {
+.form-edit h2 {
     margin-bottom: 50px;
     font-size: 30px;
+    margin-left: 1.5rem;
 }
 
-.form input {
+.form-edit input {
     font-family: "Roboto", sans-serif;
     outline: 0;
     background: #d1cccc;
@@ -40,17 +40,7 @@
     font-size: 14px;
 }
 
-.form textarea {
-    border: 1px solid rgb(206, 206, 206);
-    width: 99%;
-    max-width: 99%;
-    min-width: 99%;
-    min-height: 50px;
-    margin-bottom: 10px;
-    background-color: #ebebeb
-}
-
-.form button {
+.form-edit button {
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     outline: 0;
@@ -71,10 +61,6 @@
     background: #0056b3;
 }
 
-.form .register-form {
-    display: none;
-}
-
 .container {
     position: relative;
     z-index: 1;
@@ -89,37 +75,17 @@
     clear: both;
 }
 
-.form .message {
-    padding-top: 10px;
-    margin-bottom: 0px;
-    color: #000000;
-    font-size: 17px;
-}
-
-.form .message a {
-    margin-left: 20px;
-    color: white;
-    background-color: #5c9596;
-    text-decoration: none;
-    text-align: center;
-    background-color: #2890ff;
-}
-
-.form .message a:hover {
+.form-edit a:hover {
     background-color: #0056b3;
 }
 
-.form a:hover {
-    background-color: #0056b3;
-}
-
-#create img {
+#edit img {
     width: 35%;
     margin-top: -4rem;
     margin-right: 12rem;
 }
 
-#create {
+#edit {
     display: flex;
     justify-content: center;
     vertical-align: middle;
