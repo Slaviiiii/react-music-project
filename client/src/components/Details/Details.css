@@ -3,6 +3,7 @@
    background-color: #ebebeb;
    margin: 50px auto;
    min-height: 300px;
+   margin-bottom: 5rem;
    width: 50%;
    border: 2px ridge rgb(210, 208, 208);
    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2), 0 3px 3px 0 rgba(0, 0, 0, 0.24);
