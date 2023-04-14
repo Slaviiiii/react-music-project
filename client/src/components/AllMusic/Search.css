@@ -19,11 +19,11 @@
 }
 
 #search button[type="submit"] {
-    padding: 10px;
+    padding: 8px;
     border-radius: 10px;
     margin-bottom: 19px;
     border: none;
-    font-size: 18px;
+    font-size: 19px;
     background-color: #2890ff;
     color: white;
     cursor: pointer;
