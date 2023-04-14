@@ -1,5 +1,5 @@
 import "./Details.css";
-import "./Comment.css";
+import "./Comment/Comment.css";
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState, useContext } from "react";
 
@@ -115,7 +115,11 @@ export const Details = () => {
                     </div>
                 </div>
 
-                {isOwner && (
+                {isOwner && music.likes?.length === 1 && (
+                    <span id="like-span"><i className="fa-solid fa-thumbs-up"></i>: {music.likes?.length} person has liked</span>
+                )}
+
+                {isOwner && music.likes?.length !== 1 && (
                     <span id="like-span"><i className="fa-solid fa-thumbs-up"></i>: {music.likes?.length} people have liked</span>
                 )}
 
