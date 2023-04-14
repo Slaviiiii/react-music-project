@@ -22,19 +22,19 @@ The used Technologies are:
     1. Home page 
 
 
-![image](https://user-images.githubusercontent.com/106228555/230734212-a4c70456-4711-4469-968e-237da7d8f8f5.png)
+![image](https://user-images.githubusercontent.com/106228555/232030290-fa497ca5-2110-4585-aa50-82736ac78dbb.png)
 
 
     2. Catalog page without music
 
 
-![image](https://user-images.githubusercontent.com/106228555/230668861-c7592381-59b9-44da-adc8-926d5af01045.png)
+![image](https://user-images.githubusercontent.com/106228555/232031969-dde9e706-70aa-46b8-8a18-bdf4f246fe1f.png)
 
 
     3. Catalog page with music
 
 
-![image](https://user-images.githubusercontent.com/106228555/230735120-46ca6755-25fd-4c95-af81-af70c1e6a2e8.png)
+![image](https://user-images.githubusercontent.com/106228555/232030415-a8f16cec-dfad-454f-a06d-95a5e4decd2f.png)
 
 
 ## Get Started with
