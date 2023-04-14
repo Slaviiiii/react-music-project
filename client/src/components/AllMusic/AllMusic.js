@@ -92,7 +92,7 @@ export const AllMusic = () => {
                 </>    
             )}
 
-            {music.length === 0 && isSearched === true &&  (
+            {music.length === 0 && (
                 <>
                     <h2>There are no matches.</h2>
                 </>    
