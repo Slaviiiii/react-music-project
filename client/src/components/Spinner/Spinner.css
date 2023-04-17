@@ -2,14 +2,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 30%;
     height: 0;
     padding-bottom: 100%;
     position: relative;
 }
 
 .spinner-text {
-    font-size: 36px;
+    font-size: 33px;
     font-weight: bold;
     color: #333;
     text-align: center;
