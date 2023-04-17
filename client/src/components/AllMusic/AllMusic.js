@@ -7,7 +7,7 @@ import { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import Music from "./Music";
-import { Spinner } from "../../Spinner/Spinner";
+import { Spinner } from "../Spinner/Spinner";
 
 import { MusicContext } from "../../contexts/MusicContext";
 import { useForm } from "react-hook-form";
@@ -68,6 +68,7 @@ export const AllMusic = () => {
             {isLoaded === false && <Spinner />}
 
             {isLoaded === true && (
+            <>
             <form id="search" onSubmit={handleSubmit(onSearchSubmit)}> 
                 <input
                 {...register("search", {
@@ -87,41 +88,39 @@ export const AllMusic = () => {
                  /> 
                 <button type="submit"><i className="fa-sharp fa-solid fa-magnifying-glass"></i> Search</button> 
             </form>
+            
             <h2>
                 <i id="yellow-layer" className="fa-solid fa-layer-group"></i>
                 <span id="first-half">All </span>
                 <span id="second-half">Music</span>
                 <i id="white-layer" className="fa-sharp fa-solid fa-layer-group"></i>
             </h2>     
-            <>
+
             {allMusic.length === 0 && isSearched === false &&  (
                 <>
                     <h2>There are no creations on this page.</h2>
                     <Link to="/create" id="be-first">Be the first who created one <i className="fa-solid fa-plus"></i></Link>  
                 </>    
             )}
-            </>
-            <>
+
             {music.length === 0 && isSearched === true && (
                 <>
                     <h2>There are no matches.</h2>
                 </>    
             )}
-            </>
+
             <div className="all-music-wrapper">
                 {music.map(x =>
                 <Music key={`${x._id}-${x.artist}-${x.name}`} {...x} />
                 )}   
             </div>
             
-            <>
             {music.length === 0 && (
                 <div>
                     <img id='no-music' src="/images/no-music.png" alt="no music" />
                 </div>              
             )}
             </>
-            
             )}
         </section>
     );
