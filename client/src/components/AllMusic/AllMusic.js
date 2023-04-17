@@ -32,6 +32,7 @@ export const AllMusic = () => {
     const {
         register,
         handleSubmit,
+        setValue,
     } = useForm({
         defaultValue: {
             search: "",
@@ -59,6 +60,8 @@ export const AllMusic = () => {
         } else if(data.artist.length > 0 && searchedMusic.length === 0){
             searchedMusic = allMusic.filter(x => x.artist.toLowerCase().startsWith(data.artist.toLowerCase()) === true);
         }  
+            setValue("search", "");
+            setValue("artist", "");
             setMusic(searchedMusic);
     }
 
