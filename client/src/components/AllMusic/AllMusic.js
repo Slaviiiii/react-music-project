@@ -65,11 +65,9 @@ export const AllMusic = () => {
 
     return (
         <section id="all-music">
-            {!isLoaded && (
-                <Spinner/>
-            )}
+            {isLoaded === false && <Spinner />}
 
-            { isLoaded && (
+            {isLoaded === true && (
             <form id="search" onSubmit={handleSubmit(onSearchSubmit)}> 
                 <input
                 {...register("search", {
@@ -95,32 +93,35 @@ export const AllMusic = () => {
                 <span id="second-half">Music</span>
                 <i id="white-layer" className="fa-sharp fa-solid fa-layer-group"></i>
             </h2>     
+            <>
             {allMusic.length === 0 && isSearched === false &&  (
                 <>
                     <h2>There are no creations on this page.</h2>
                     <Link to="/create" id="be-first">Be the first who created one <i className="fa-solid fa-plus"></i></Link>  
                 </>    
             )}
-
+            </>
+            <>
             {music.length === 0 && isSearched === true && (
                 <>
                     <h2>There are no matches.</h2>
                 </>    
             )}
-
+            </>
             <div className="all-music-wrapper">
                 {music.map(x =>
                 <Music key={`${x._id}-${x.artist}-${x.name}`} {...x} />
                 )}   
             </div>
             
-
+            <>
             {music.length === 0 && (
                 <div>
                     <img id='no-music' src="/images/no-music.png" alt="no music" />
                 </div>              
             )}
-
+            </>
+            
             )}
         </section>
     );
