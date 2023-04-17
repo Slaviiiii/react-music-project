@@ -1,16 +1,20 @@
 import "./AllMusic.css";
 import "./Music.css";
 import "./Search.css";
+
 import { useContext, useState, useEffect } from "react";
 
 import { Link } from "react-router-dom";
 
 import Music from "./Music";
+import { Spinner } from "../../Spinner/Spinner";
 
 import { MusicContext } from "../../contexts/MusicContext";
 import { useForm } from "react-hook-form";
 import { musicServiceFactory } from "../../services/musicService";
+
 let isSearched = false;
+let isLoaded = false;
 
 export const AllMusic = () => {
     const [allMusic, setAllMusic] = useState([]);
@@ -20,6 +24,7 @@ export const AllMusic = () => {
     useEffect(() => {
         musicService.getAll()
             .then(result => {
+                isLoaded = true;
                 setAllMusic(result);
                 setMusic(result);
             })
@@ -60,6 +65,11 @@ export const AllMusic = () => {
 
     return (
         <section id="all-music">
+            {!isLoaded && (
+                <Spinner/>
+            )}
+
+            { isLoaded && (
             <form id="search" onSubmit={handleSubmit(onSearchSubmit)}> 
                 <input
                 {...register("search", {
@@ -109,6 +119,8 @@ export const AllMusic = () => {
                 <div>
                     <img id='no-music' src="/images/no-music.png" alt="no music" />
                 </div>              
+            )}
+
             )}
         </section>
     );
