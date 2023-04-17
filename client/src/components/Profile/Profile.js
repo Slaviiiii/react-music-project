@@ -1,23 +1,32 @@
 import "./Profile.css";
-import { useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 
 import Music from "../AllMusic/Music";
 import { Spinner } from "../Spinner/Spinner";
 
-import { MusicContext } from "../../contexts/MusicContext";
 import { AuthContext } from "../../contexts/AuthContext";
 
-let isLoaded = false;
+import { musicServiceFactory } from "../../services/musicService";
 
 export const Profile = () => {
-    const { music } = useContext(MusicContext);
+    const [isLoaded, setIsLoaded] = useState(false);
+    const [music, setMusic] = useState([]);
     const { userId } = useContext(AuthContext);
+    const musicService = musicServiceFactory();
+
+    useEffect(() => {
+        musicService.getAll()
+            .then(result => {
+                setIsLoaded(true);
+                setMusic(result);
+            })
+    }, []);
 
     const userMusic = music.filter(m => m._ownerId === userId);
 
     return (
         <section id="all-music">
-            {isLoaded === false && <Spinner/>}
+            {isLoaded === false && <Spinner /> }
 
             {isLoaded === true && (
             <>
