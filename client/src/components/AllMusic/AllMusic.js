@@ -13,18 +13,17 @@ import { MusicContext } from "../../contexts/MusicContext";
 import { useForm } from "react-hook-form";
 import { musicServiceFactory } from "../../services/musicService";
 
-let isSearched = false;
-let isLoaded = false;
-
 export const AllMusic = () => {
     const [allMusic, setAllMusic] = useState([]);
     const [music, setMusic] = useState([]);
+    const [isLoaded, setIsLoaded] = useState(false);
+    const [isSearched, setIsSearched] = useState(false);
     const musicService = musicServiceFactory();
 
     useEffect(() => {
         musicService.getAll()
             .then(result => {
-                isLoaded = true;
+                setIsLoaded(true);
                 setAllMusic(result);
                 setMusic(result);
             })
@@ -42,9 +41,9 @@ export const AllMusic = () => {
 
     const onSearchSubmit = async (data) => {  
         if(isSearched === false) {
-            isSearched = true;
+            setIsSearched(true);
         } else {
-            isSearched = false;
+            setIsSearched(false);
         }
 
         if(data.search.length === 0 && data.artist.length === 0) {

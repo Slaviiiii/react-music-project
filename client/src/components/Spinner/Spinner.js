@@ -2,8 +2,9 @@ import "./Spinner.css";
 
 export const Spinner = () => {
     return (
-        <div class="spinner">
-            <div class="spinner-text">Global Music</div>
+        <div className="spinner">
+            <div className="spinner-text">
+                Loading...</div>
         </div>
     )
 }
